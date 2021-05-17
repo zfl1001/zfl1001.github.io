@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#3bc9db">
-<title>zfl</title>
+<title>Gridea+Github创建静态博客教程 | zfl</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1621265465245">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,6 +38,8 @@
 
 
 
+  <meta name="description" content="Gridea+Github创建静态博客教程" />
+  <meta name="keywords" content="GitHub,Gridea" />
 </head>
 
 <body>
@@ -170,10 +172,26 @@
   <div class="main-continer">
     
     <div
-      class="section-layout  pisces">
+      class="section-layout pisces ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -214,90 +232,624 @@
   </div>
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#git">Git</a></li>
+<li><a href="#github">Github</a>
+<ul>
+<li><a href="#%E4%BB%93%E5%BA%93">仓库</a></li>
+<li><a href="#token%E4%BB%A4%E7%89%8C">Token（令牌）</a></li>
+</ul>
+</li>
+<li><a href="#gridea%E9%85%8D%E7%BD%AE">Gridea配置</a>
+<ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85">下载安装</a></li>
+<li><a href="#%E5%A1%AB%E9%85%8D%E7%BD%AE">填配置</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9B%B4%E6%8D%A2%E9%A2%98">更换题</a></li>
+<li><a href="#%E5%BC%80%E5%90%AFgitalk%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F">开启Gitalk评论系统</a></li>
+<li><a href="#github%E6%8E%88%E6%9D%83%E7%9A%84oauth%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%A6%82%E4%BD%95%E8%A7%A3%E7%BB%91">GitHub授权的OAuth应用程序如何解绑</a></li>
+<li><a href="#%E6%80%8E%E6%A0%B7%E5%88%A0%E9%99%A4github%E7%94%9F%E6%88%90-gpg-%E5%AF%86%E9%92%A5">怎样删除github生成 GPG 密钥</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8Egridea%E6%97%A0%E7%94%A8%E6%96%87%E4%BB%B6%E7%9A%84%E6%B8%85%E7%90%86">关于Gridea无用文件的清理</a></li>
+</ul>
+
+  </div>
 </div>
+
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
       }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
     });
   }
-  </script>
-        <div class="section-box tag-line box-shadow-wrapper">
-          <section class="section tags-section posts-expand bg-color">
-            <div class="padding-wrapper">
-  <div class="tag-timeline-box">
-    <div class="tag-timeline-wrapper">
-      <div class="tag-timeline-title">
-        <h2>
-          vim
-          <small class="language" data-lan="tag">标签</small>
-        </h2>
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
+          
+        
       </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://zfl1001.github.io/post/gridea-github/">
+      Gridea+Github创建静态博客教程
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2021-04-03 15:25:42">2021-04-03</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show language" data-lan="category-in">分类于</span>
+      
+      
+      <a href="https://zfl1001.github.io/tag/GitHub/">
+        <span>GitHub</span>
+      </a>、
       
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://zfl1001.github.io/post/centos7-software/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              04-06
-              <small>CentOS 7下常用软件的安装</small>
-            </h1>
-          </div>
-        </div>
+      <a href="https://zfl1001.github.io/tag/ksLr5CMFX/">
+        <span>Gridea</span>
       </a>
       
       
+    </span>
+    <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>6<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>1344<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</section>
+            <div class="post-body next-md-body" id="post_body">
+              <p><ul class="markdownIt-TOC">
+<li><a href="#git">Git</a></li>
+<li><a href="#github">Github</a>
+<ul>
+<li><a href="#%E4%BB%93%E5%BA%93">仓库</a></li>
+<li><a href="#token%E4%BB%A4%E7%89%8C">Token（令牌）</a></li>
+</ul>
+</li>
+<li><a href="#gridea%E9%85%8D%E7%BD%AE">Gridea配置</a>
+<ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85">下载安装</a></li>
+<li><a href="#%E5%A1%AB%E9%85%8D%E7%BD%AE">填配置</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9B%B4%E6%8D%A2%E9%A2%98">更换题</a></li>
+<li><a href="#%E5%BC%80%E5%90%AFgitalk%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F">开启Gitalk评论系统</a></li>
+<li><a href="#github%E6%8E%88%E6%9D%83%E7%9A%84oauth%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%A6%82%E4%BD%95%E8%A7%A3%E7%BB%91">GitHub授权的OAuth应用程序如何解绑</a></li>
+<li><a href="#%E6%80%8E%E6%A0%B7%E5%88%A0%E9%99%A4github%E7%94%9F%E6%88%90-gpg-%E5%AF%86%E9%92%A5">怎样删除github生成 GPG 密钥</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8Egridea%E6%97%A0%E7%94%A8%E6%96%87%E4%BB%B6%E7%9A%84%E6%B8%85%E7%90%86">关于Gridea无用文件的清理</a></li>
+</ul>
+<br>
+<img src="https://zfl1001.github.io/post-images/1617434807172.ico" alt="" loading="lazy"></p>
+<h1 id="git">Git</h1>
+<p>下载地址<a href="https://git-scm.com?fileGuid=tBeiWkLtO2UR71Fn">https://git-scm.com</a>或<a href="https://pc.qq.com/?fileGuid=tBeiWkLtO2UR71Fn">https://pc.qq.com/</a>这个地址下载比较快</p>
+<ul>
+<li>下载后安装建议全选，如下图所示，之后一直NEXT，安装完成后，最后一个界面取消所有选项，然后点击finish。</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://zfl1001.github.io/post-images/1621264795650.png" alt="" loading="lazy"></figure>
+<p><strong>方法一：先创建一个Github Pages文件夹，在文件夹下右键Git Bash Here，然后按照以下的命令运行（我的保存在blog命令.txt下，建议也建一个.txt文件）</strong></p>
+<pre><code>1.git clone https://github.com/zfl1001/zfl1001.github.io
+//git clone https://github.com/用户名/用户名.github.io
+
+2.cd zfl1001.github.io
+//cd 用户名.github.io
+echo &quot;Hello World&quot; &gt; index.html   //写入
+
+3.git add --all                   // 添加   
+git commit -m &quot;Initial commit&quot;    //提交
+git push -u origin master（分支名，默认是main）
+DNS刷新：ipconfig /flushdns  //win+r——&gt;cmd下运行
+</code></pre>
+<p><strong>方法二：安装完之后在桌面右键Git Bash Here，输入以下内容进行配置</strong></p>
+<pre><code>$ git config --global user.name &quot;sailorlisa&quot;
+$ git config --global user.email &quot;sailorlisa@outlook.com&quot;
+注释：配置用户名和邮箱，在引号中填入见参考文档
+</code></pre>
+<p>参考文档<a href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE?fileGuid=tBeiWkLtO2UR71Fn">https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE</a></p>
+<h1 id="github">Github</h1>
+<p>​      注册Github账号<a href="https://github.com?fileGuid=tBeiWkLtO2UR71Fn">https://github.com</a></p>
+<h2 id="仓库">仓库</h2>
+<ol>
+<li>点击create a new repositories</li>
+<li>输入Repository name：zfl1001.github.io。固定格式：用户名.github.io</li>
+<li>Description可填可不填。</li>
+<li>勾选Public</li>
+<li>勾选Add a README file(可不勾选)</li>
+<li>点击Create repository</li>
+<li>自动跳转到仓库页面，点击Insights后面的Settings</li>
+<li>拉到下面GitHub Pages，看看有没有显示：Your site is published at<a href="https://zfl1001.github.io?fileGuid=tBeiWkLtO2UR71Fn">https://zfl1001.github.io</a>，没有的话稍微等一下再试。（<strong>注：此处的分支名最好与Gridea上默认的分支名（master）一致，且将master设为默认分支。</strong>）</li>
+</ol>
+<figure data-type="image" tabindex="2"><img src="https://zfl1001.github.io/post-images/1621264812564.png" alt="" loading="lazy"></figure>
+<ol start="9">
+<li>有的话点击链接跳转，看看能否打开</li>
+<li>master设为默认分支的办法：进入zfl1001.github.io——&gt;Settings——&gt;Branches——&gt;master或点击头像——&gt;Settings——&gt;Repositories——&gt;master——&gt;Update</li>
+</ol>
+<figure data-type="image" tabindex="3"><img src="https://zfl1001.github.io/post-images/1621264832150.png" alt="" loading="lazy"></figure>
+<h2 id="token令牌">Token（令牌）</h2>
+<ol>
+<li>点击头像——&gt;Settings——&gt;Developer settings——&gt;Personal access tokens——&gt;Generate new token——&gt;填写Note——&gt;勾选repo——&gt;Generate token</li>
+<li>创建个txt文档，把token保存起来，避免刷新后隐藏了。</li>
+</ol>
+<h1 id="gridea配置">Gridea配置</h1>
+<h2 id="下载安装">下载安装</h2>
+<p>在<a href="https://gridea.dev?fileGuid=tBeiWkLtO2UR71Fn">https://gridea.dev</a>下载完成后，安装。</p>
+<h2 id="填配置">填配置</h2>
+<ul>
+<li>打开后看到默认的2篇文章，则表示安装成功，创建一个文件夹，名字随意</li>
+<li>点击左下角的三根横线，选择之前创建的文件夹，然后点击保存。</li>
+<li>点击远程进行配置：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>Platform</strong></th>
+<th style="text-align:left"><strong>Github Pages</strong></th>
+<th style="text-align:left">****</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">域名</td>
+<td style="text-align:left">Github Pages 对应的域名</td>
+<td style="text-align:left">https://zfl1001.github.io</td>
+</tr>
+<tr>
+<td style="text-align:left">仓库</td>
+<td style="text-align:left">github上仓库名</td>
+<td style="text-align:left">zfl1001.github.io</td>
+</tr>
+<tr>
+<td style="text-align:left">分支</td>
+<td style="text-align:left">Github Pages 对应的分支</td>
+<td style="text-align:left">master</td>
+</tr>
+<tr>
+<td style="text-align:left">仓库用户名</td>
+<td style="text-align:left">仓库所属用户的用户名</td>
+<td style="text-align:left">zfl1001</td>
+</tr>
+<tr>
+<td style="text-align:left">邮箱</td>
+<td style="text-align:left">Git 推送时的邮箱</td>
+<td style="text-align:left">我的是QQ邮箱</td>
+</tr>
+<tr>
+<td style="text-align:left">Token</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">上面步骤里的token</td>
+</tr>
+<tr>
+<td style="text-align:left">CNAME</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">可不填</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>填完配置后，点击【保存】</li>
+<li>无误后，点击【检测远程连接】</li>
+<li>点击【预览】，会弹出浏览器，本地预览效果。</li>
+<li>如果没问题，点击【同步】</li>
+<li>可在更改【主题】，更改后马上点击【保存】</li>
+<li>在客户端里进行任何操作，不要忘记点击【保存】。保存了之后先预览，没问题再同步。</li>
+<li>有问题点击<a href="https://github.com/getgridea/gridea?fileGuid=tBeiWkLtO2UR71Fn">https://github.com/getgridea/gridea</a>里的【Issues】，在【Open】和【Closed】里看看有没有和你问题相似的issue。</li>
+</ol>
+<h1 id="更换题">更换题</h1>
+<ul>
+<li>在<a href="https://gridea.dev/themes/?fileGuid=tBeiWkLtO2UR71Fn">https://gridea.dev/themes/</a>选择主题，点击【下载文件】，下载后解压。</li>
+<li>打开到之前创建的文件夹下的themes文件夹</li>
+<li>将解压出来的文件夹复制到themes下</li>
+<li>打开Gridea客户端，打开【主题】，选择主题，滚动下鼠标，选中刚刚添加的文件夹名，保存。</li>
+</ul>
+<h1 id="开启gitalk评论系统">开启Gitalk评论系统</h1>
+<ul>
+<li>在<a href="https://github.com/settings/applications/new?fileGuid=tBeiWkLtO2UR71Fn">https://github.com/settings/applications/new</a>注册应用。</li>
+<li>或者点击头像——&gt;Settings——&gt;Developer settings——&gt; OAuth Apps——&gt; New OAuth App</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>Application name</strong></th>
+<th style="text-align:left"><strong>随意取一个名字</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Homepage URL</td>
+<td style="text-align:left">https://zfl1001.github.io/</td>
+</tr>
+<tr>
+<td style="text-align:left">Application description</td>
+<td style="text-align:left">可不填</td>
+</tr>
+<tr>
+<td style="text-align:left">Authorization callback URL</td>
+<td style="text-align:left">https://zfl1001.github.io/</td>
+</tr>
+</tbody>
+</table>
+<p>填写后点击【Register application】，会得到【Client ID】和【Client Secret】。</p>
+<p>如果你的repo还没有开启issue功能，那么就需要在存储评论的仓库设置中开启issue，这样就可以使用了。</p>
+<figure data-type="image" tabindex="4"><img src="https://zfl1001.github.io/post-images/1621264852197.png" alt="" loading="lazy"></figure>
+<p>打开Gridea客户端——&gt;配置——&gt;评论配置——&gt;Platform（选中Gitalk）——&gt;开启按钮——&gt;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>Client ID</strong></th>
+<th style="text-align:left">****</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Client Secret</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">仓库</td>
+<td style="text-align:left">Ping_Lun</td>
+</tr>
+<tr>
+<td style="text-align:left">Owner</td>
+<td style="text-align:left">zfl1001（用户名）</td>
+</tr>
+</tbody>
+</table>
+<p>填完后点击【保存】——&gt;【同步】。</p>
+<p>稍等一会儿后，在浏览器打开域名，会看到文章底下显示“未找到相关的issues进行评论xxx”，点击【使用GitHub登陆】，进行授权。</p>
+<h1 id="github授权的oauth应用程序如何解绑">GitHub授权的OAuth应用程序如何解绑</h1>
+<ul>
+<li>点击头像——&gt;Settings——&gt;Applications——&gt;Authorized OAuth Apps</li>
+<li>找到想解绑的程序——&gt;点击右侧的三个点——&gt;选择revoke</li>
+<li>接着我们看到会问你Are you sure you want to revoke authorization？，我们直接同意即可</li>
+</ul>
+<h1 id="怎样删除github生成-gpg-密钥">怎样删除github生成 GPG 密钥</h1>
+<ul>
+<li>gpg --delete-secret-key 要删除的密钥ID。</li>
+<li>回车后提示...(y/n)</li>
+<li>创建见官网</li>
+</ul>
+<h1 id="关于gridea无用文件的清理">关于Gridea无用文件的清理</h1>
+<ul>
+<li>首先在Gridea界面删除掉自己想删除的文件</li>
+<li>然后到Gridea本地目录下，将output文件下的.git文件删除</li>
+<li>最后再点一下检测远程连接，同步。</li>
+</ul>
+
+            </div>
+            
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      zfl
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://zfl1001.github.io/post/gridea-github/" title="Gridea+Github创建静态博客教程">https://zfl1001.github.io/post/gridea-github/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://zfl1001.github.io/tag/GitHub/"># GitHub</a>
+    
+      <a href="https://zfl1001.github.io/tag/ksLr5CMFX/"># Gridea</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
       
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="VMware15下安装CentOS7" href="https://zfl1001.github.io/post/vmware15-centos7/">VMware15下安装CentOS7</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="VMware15下安装CentOS7" href="https://zfl1001.github.io/post/vmware15-centos7/">上一篇</a>
       
+    </div>
+    <div class="nav-next">
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+        <a class="nav-pc-next" title="Hello World!" href="https://zfl1001.github.io/post/hello-world/">Hello World!</a>
+        <a class="nav-mobile-next" title="Hello World!" href="https://zfl1001.github.io/post/hello-world/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
 </div>
-          </section>
+            
+            
+  
+    
+      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'd85e7912762939fc8e17',
+    clientSecret: '0a1ea97f993d7062c4d86ec68f65e88945500516',
+    repo: 'Ping_Lun',
+    owner: 'zfl1001',
+    admin: ['zfl1001'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+  gitalk.render('gitalk-container')
+</script>
+    
+    
+  
+
+          </div>
         </div>
       </div>
     </div>
@@ -504,6 +1056,223 @@
     parent.insertBefore(aelem, next);
   })
 </script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+          
+        </div>
+      </div>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
+    </div>
+    <div class="bottom">
+      
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        window.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        window.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        window.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        window.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      window.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
   </div>
 </body>
 
@@ -1479,6 +2248,5 @@ Hello GitHub!&lt;/p&gt;
   // Using config rendering effect at 'element'.
   const cn = new CanvasNest(document.querySelector('.snow-container'), config);
   </script>
-
 
 </html>

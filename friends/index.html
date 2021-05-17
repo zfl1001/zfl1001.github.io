@@ -9,7 +9,7 @@
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#3bc9db">
 <title>zfl</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1621261550574">
+<link rel="shortcut icon" href="/favicon.ico?v=1621265465245">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -184,19 +184,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">4</span>
+        <span class="site-item-stat-count">8</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">6</span>
+        <span class="site-item-stat-count">9</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">6</span>
+        <span class="site-item-stat-count">9</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -507,6 +507,102 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://zfl1001.github.io/post/git-bug/"" data-c="
+          &lt;h2 id=&#34;一-fatal-refusing-to-merge-unrelated-histories&#34;&gt;一、&lt;code&gt;fatal: refusing to merge unrelated histories&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;今天在使用Git创建项目的时候，在两个分支合并的时候，出现了下面的这个错误。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~/SpringSpace/newframe on  master ⌚ 11:35:56
+$ git merge origin/druid
+fatal: refusing to merge unrelated histories
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里的问题的关键在于：&lt;code&gt;fatal: refusing to merge unrelated histories&lt;/code&gt;&lt;br&gt;
+你可能会在&lt;code&gt;git pull&lt;/code&gt;或者&lt;code&gt;git push&lt;/code&gt;中都有可能会遇到，这是因为两个分支没有取得关系。那么怎么解决呢？&lt;/p&gt;
+&lt;h2 id=&#34;二-解决方案&#34;&gt;二、解决方案&lt;/h2&gt;
+&lt;p&gt;1、在你操作命令后面加&lt;code&gt;--allow-unrelated-histories&lt;/code&gt;&lt;br&gt;
+例如：&lt;br&gt;
+&lt;code&gt;git merge master --allow-unrelated-histories&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~/SpringSpace/newframe on  druid ⌚ 11:36:49
+$ git merge master --allow-unrelated-histories
+Auto-merging .gitignore
+CONFLICT (add/add): Merge conflict in .gitignore
+Automatic merge failed; fix conflicts and then commit the result.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;2、如果你是&lt;code&gt;git pull&lt;/code&gt;或者&lt;code&gt;git push&lt;/code&gt;报&lt;code&gt;fatal: refusing to merge unrelated histories&lt;/code&gt;&lt;br&gt;
+同理：&lt;br&gt;
+&lt;code&gt;git pull origin master --allow-unrelated-histories&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;原文链接：&lt;a href=&#34;https://developer.aliyun.com/article/614459&#34;&gt;解决Git中fatal: refusing to merge unrelated histories-阿里云开发者社区 (aliyun.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3、如果运行之后出现如下图所示，产生了冲突，则输入git reset --hard FETCH_HEAD即可退出，但是得提前复制一份保存本地文件，运行改命令后本地文件会被远端文件覆盖&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;zhou@DESKTOP-FBESVN7 MINGW64 ~/OneDrive/Gridea_blog/output (master)
+$ git pull origin master --allow-unrelated-histories
+From https://github.com/zfl1001/zfl1001.github.io
+ * branch            master     -&amp;gt; FETCH_HEAD
+CONFLICT (add/add): Merge conflict in index.html
+Auto-merging index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+zhou@DESKTOP-FBESVN7 MINGW64 ~/OneDrive/Gridea_blog/output (master|MERGING)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;zhou@DESKTOP-FBESVN7 MINGW64 ~/OneDrive/Gridea_blog/output (master|MERGING)
+$ git reset --hard FETCH_HEAD
+HEAD is now at 5abc0dc 更新
+
+zhou@DESKTOP-FBESVN7 MINGW64 ~/OneDrive/Gridea_blog/output (master)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;原文链接：&lt;a href=&#34;https://blog.csdn.net/tfu259/article/details/105393540/?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;amp;spm=1001.2101.3001.4242&#34;&gt;Git 出错error: Pulling is not possible because you have unmerged files_BokyLiu的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+">Git的报错</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://zfl1001.github.io/post/vscode-kuai-jie-jian/"" data-c="
+          &lt;p&gt;&lt;ul class=&#34;markdownIt-TOC&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;#js%E6%96%87%E4%BB%B6%E4%B8%80%E8%A1%8C%E6%8D%A2%E5%A4%9A%E8%A1%8C&#34;&gt;.js文件一行换多行&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;js文件一行换多行&#34;&gt;.js文件一行换多行&lt;/h1&gt;
+&lt;p&gt;【Shift】+【Alt】+【f】然后【回车(Enter)】，需安装插件【Prettier - Code formatter】&lt;br&gt;
+&lt;img src=&#34;https://zfl1001.github.io/post-images/1621263568411.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+">VScode快捷键</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://zfl1001.github.io/post/mysql-bug/"" data-c="
+          &lt;p&gt;&lt;ul class=&#34;markdownIt-TOC&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;#%E4%B8%80-%E8%8B%A5%E5%87%BA%E7%8E%B0%E4%BB%A5%E4%B8%8B%E6%8A%A5%E9%94%99%E5%88%99%E8%A1%A8%E7%A4%BA%E9%9C%80%E8%A6%81%E5%AF%B9%E5%AF%86%E7%A0%81%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9&#34;&gt;一、若出现以下报错，则表示需要对密码加密方式进行修改&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E4%BA%8C-%E8%BF%90%E8%A1%8C%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE&#34;&gt;二、运行后端项目&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;一-若出现以下报错则表示需要对密码加密方式进行修改&#34;&gt;一、若出现以下报错，则表示需要对密码加密方式进行修改&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;npm ERR! errno 1
+npm ERR! vue-element-admin-api-nodejs-itheima@1.0.0 dev: `egg-bin dev`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the vue-element-admin-api-nodejs-itheima@1.0.0 dev script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+ 
+npm ERR! A complete log of this run can be found in:
+npm ERR!     D:\Software\nodejs\node_cache\_logs\2021-05-15T13_22_18_364Z-debug.log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解决办法如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;第一步在命令界面输入
+ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;root&#39;;
+成功运行会显示
+Query OK, 0 rows affected (0.01 sec) 
+第二步在命令界面输入，后面的数字即为要修改的密码
+ALTER USER &#39;root&#39;@&#39;%&#39; IDENTIFIED WITH mysql_native_password BY &#39;123456&#39;;
+如果出现
+1396 - Operation ALTER USER failed for &#39;root&#39;@&#39;%&#39;
+错误提示可改为
+ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;123456&#39;;
+最后输入完成更改
+flush privileges;
+原文链接：https://blog.csdn.net/WM_Dawn/article/details/108959169
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;二-运行后端项目&#34;&gt;二、运行后端项目&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;npm run dev  #运行后端
+&lt;/code&gt;&lt;/pre&gt;
+">MySQL报错解决方法</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://zfl1001.github.io/post/win10-mysql/"" data-c="
@@ -820,6 +916,226 @@ DNS1=     DNS
 &lt;/ul&gt;
 &lt;figure data-type=&#34;image&#34; tabindex=&#34;17&#34;&gt;&lt;img src=&#34;https://zfl1001.github.io/post-images/1621229397152.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 ">VMware15下安装CentOS7</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://zfl1001.github.io/post/gridea-github/"" data-c="
+          &lt;p&gt;&lt;ul class=&#34;markdownIt-TOC&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;#git&#34;&gt;Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#github&#34;&gt;Github&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#%E4%BB%93%E5%BA%93&#34;&gt;仓库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#token%E4%BB%A4%E7%89%8C&#34;&gt;Token（令牌）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#gridea%E9%85%8D%E7%BD%AE&#34;&gt;Gridea配置&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85&#34;&gt;下载安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E5%A1%AB%E9%85%8D%E7%BD%AE&#34;&gt;填配置&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E6%9B%B4%E6%8D%A2%E9%A2%98&#34;&gt;更换题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E5%BC%80%E5%90%AFgitalk%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F&#34;&gt;开启Gitalk评论系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#github%E6%8E%88%E6%9D%83%E7%9A%84oauth%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%A6%82%E4%BD%95%E8%A7%A3%E7%BB%91&#34;&gt;GitHub授权的OAuth应用程序如何解绑&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E6%80%8E%E6%A0%B7%E5%88%A0%E9%99%A4github%E7%94%9F%E6%88%90-gpg-%E5%AF%86%E9%92%A5&#34;&gt;怎样删除github生成 GPG 密钥&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E5%85%B3%E4%BA%8Egridea%E6%97%A0%E7%94%A8%E6%96%87%E4%BB%B6%E7%9A%84%E6%B8%85%E7%90%86&#34;&gt;关于Gridea无用文件的清理&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;img src=&#34;https://zfl1001.github.io/post-images/1617434807172.ico&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;git&#34;&gt;Git&lt;/h1&gt;
+&lt;p&gt;下载地址&lt;a href=&#34;https://git-scm.com?fileGuid=tBeiWkLtO2UR71Fn&#34;&gt;https://git-scm.com&lt;/a&gt;或&lt;a href=&#34;https://pc.qq.com/?fileGuid=tBeiWkLtO2UR71Fn&#34;&gt;https://pc.qq.com/&lt;/a&gt;这个地址下载比较快&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载后安装建议全选，如下图所示，之后一直NEXT，安装完成后，最后一个界面取消所有选项，然后点击finish。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://zfl1001.github.io/post-images/1621264795650.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;方法一：先创建一个Github Pages文件夹，在文件夹下右键Git Bash Here，然后按照以下的命令运行（我的保存在blog命令.txt下，建议也建一个.txt文件）&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.git clone https://github.com/zfl1001/zfl1001.github.io
+//git clone https://github.com/用户名/用户名.github.io
+
+2.cd zfl1001.github.io
+//cd 用户名.github.io
+echo &amp;quot;Hello World&amp;quot; &amp;gt; index.html   //写入
+
+3.git add --all                   // 添加   
+git commit -m &amp;quot;Initial commit&amp;quot;    //提交
+git push -u origin master（分支名，默认是main）
+DNS刷新：ipconfig /flushdns  //win+r——&amp;gt;cmd下运行
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;方法二：安装完之后在桌面右键Git Bash Here，输入以下内容进行配置&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git config --global user.name &amp;quot;sailorlisa&amp;quot;
+$ git config --global user.email &amp;quot;sailorlisa@outlook.com&amp;quot;
+注释：配置用户名和邮箱，在引号中填入见参考文档
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;参考文档&lt;a href=&#34;https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE?fileGuid=tBeiWkLtO2UR71Fn&#34;&gt;https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;github&#34;&gt;Github&lt;/h1&gt;
+&lt;p&gt;​      注册Github账号&lt;a href=&#34;https://github.com?fileGuid=tBeiWkLtO2UR71Fn&#34;&gt;https://github.com&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;仓库&#34;&gt;仓库&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;点击create a new repositories&lt;/li&gt;
+&lt;li&gt;输入Repository name：zfl1001.github.io。固定格式：用户名.github.io&lt;/li&gt;
+&lt;li&gt;Description可填可不填。&lt;/li&gt;
+&lt;li&gt;勾选Public&lt;/li&gt;
+&lt;li&gt;勾选Add a README file(可不勾选)&lt;/li&gt;
+&lt;li&gt;点击Create repository&lt;/li&gt;
+&lt;li&gt;自动跳转到仓库页面，点击Insights后面的Settings&lt;/li&gt;
+&lt;li&gt;拉到下面GitHub Pages，看看有没有显示：Your site is published at&lt;a href=&#34;https://zfl1001.github.io?fileGuid=tBeiWkLtO2UR71Fn&#34;&gt;https://zfl1001.github.io&lt;/a&gt;，没有的话稍微等一下再试。（&lt;strong&gt;注：此处的分支名最好与Gridea上默认的分支名（master）一致，且将master设为默认分支。&lt;/strong&gt;）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://zfl1001.github.io/post-images/1621264812564.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;有的话点击链接跳转，看看能否打开&lt;/li&gt;
+&lt;li&gt;master设为默认分支的办法：进入zfl1001.github.io——&amp;gt;Settings——&amp;gt;Branches——&amp;gt;master或点击头像——&amp;gt;Settings——&amp;gt;Repositories——&amp;gt;master——&amp;gt;Update&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://zfl1001.github.io/post-images/1621264832150.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;token令牌&#34;&gt;Token（令牌）&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;点击头像——&amp;gt;Settings——&amp;gt;Developer settings——&amp;gt;Personal access tokens——&amp;gt;Generate new token——&amp;gt;填写Note——&amp;gt;勾选repo——&amp;gt;Generate token&lt;/li&gt;
+&lt;li&gt;创建个txt文档，把token保存起来，避免刷新后隐藏了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;gridea配置&#34;&gt;Gridea配置&lt;/h1&gt;
+&lt;h2 id=&#34;下载安装&#34;&gt;下载安装&lt;/h2&gt;
+&lt;p&gt;在&lt;a href=&#34;https://gridea.dev?fileGuid=tBeiWkLtO2UR71Fn&#34;&gt;https://gridea.dev&lt;/a&gt;下载完成后，安装。&lt;/p&gt;
+&lt;h2 id=&#34;填配置&#34;&gt;填配置&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;打开后看到默认的2篇文章，则表示安装成功，创建一个文件夹，名字随意&lt;/li&gt;
+&lt;li&gt;点击左下角的三根横线，选择之前创建的文件夹，然后点击保存。&lt;/li&gt;
+&lt;li&gt;点击远程进行配置：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Platform&lt;/strong&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Github Pages&lt;/strong&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;****&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;域名&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Github Pages 对应的域名&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;https://zfl1001.github.io&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;仓库&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;github上仓库名&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;zfl1001.github.io&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;分支&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Github Pages 对应的分支&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;master&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;仓库用户名&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;仓库所属用户的用户名&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;zfl1001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;邮箱&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Git 推送时的邮箱&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;我的是QQ邮箱&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Token&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;上面步骤里的token&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;CNAME&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;可不填&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol&gt;
+&lt;li&gt;填完配置后，点击【保存】&lt;/li&gt;
+&lt;li&gt;无误后，点击【检测远程连接】&lt;/li&gt;
+&lt;li&gt;点击【预览】，会弹出浏览器，本地预览效果。&lt;/li&gt;
+&lt;li&gt;如果没问题，点击【同步】&lt;/li&gt;
+&lt;li&gt;可在更改【主题】，更改后马上点击【保存】&lt;/li&gt;
+&lt;li&gt;在客户端里进行任何操作，不要忘记点击【保存】。保存了之后先预览，没问题再同步。&lt;/li&gt;
+&lt;li&gt;有问题点击&lt;a href=&#34;https://github.com/getgridea/gridea?fileGuid=tBeiWkLtO2UR71Fn&#34;&gt;https://github.com/getgridea/gridea&lt;/a&gt;里的【Issues】，在【Open】和【Closed】里看看有没有和你问题相似的issue。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;更换题&#34;&gt;更换题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;在&lt;a href=&#34;https://gridea.dev/themes/?fileGuid=tBeiWkLtO2UR71Fn&#34;&gt;https://gridea.dev/themes/&lt;/a&gt;选择主题，点击【下载文件】，下载后解压。&lt;/li&gt;
+&lt;li&gt;打开到之前创建的文件夹下的themes文件夹&lt;/li&gt;
+&lt;li&gt;将解压出来的文件夹复制到themes下&lt;/li&gt;
+&lt;li&gt;打开Gridea客户端，打开【主题】，选择主题，滚动下鼠标，选中刚刚添加的文件夹名，保存。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;开启gitalk评论系统&#34;&gt;开启Gitalk评论系统&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;在&lt;a href=&#34;https://github.com/settings/applications/new?fileGuid=tBeiWkLtO2UR71Fn&#34;&gt;https://github.com/settings/applications/new&lt;/a&gt;注册应用。&lt;/li&gt;
+&lt;li&gt;或者点击头像——&amp;gt;Settings——&amp;gt;Developer settings——&amp;gt; OAuth Apps——&amp;gt; New OAuth App&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Application name&lt;/strong&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;strong&gt;随意取一个名字&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Homepage URL&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;https://zfl1001.github.io/&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Application description&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;可不填&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Authorization callback URL&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;https://zfl1001.github.io/&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;填写后点击【Register application】，会得到【Client ID】和【Client Secret】。&lt;/p&gt;
+&lt;p&gt;如果你的repo还没有开启issue功能，那么就需要在存储评论的仓库设置中开启issue，这样就可以使用了。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;https://zfl1001.github.io/post-images/1621264852197.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;打开Gridea客户端——&amp;gt;配置——&amp;gt;评论配置——&amp;gt;Platform（选中Gitalk）——&amp;gt;开启按钮——&amp;gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Client ID&lt;/strong&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;****&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Client Secret&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;仓库&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Ping_Lun&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Owner&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;zfl1001（用户名）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;填完后点击【保存】——&amp;gt;【同步】。&lt;/p&gt;
+&lt;p&gt;稍等一会儿后，在浏览器打开域名，会看到文章底下显示“未找到相关的issues进行评论xxx”，点击【使用GitHub登陆】，进行授权。&lt;/p&gt;
+&lt;h1 id=&#34;github授权的oauth应用程序如何解绑&#34;&gt;GitHub授权的OAuth应用程序如何解绑&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;点击头像——&amp;gt;Settings——&amp;gt;Applications——&amp;gt;Authorized OAuth Apps&lt;/li&gt;
+&lt;li&gt;找到想解绑的程序——&amp;gt;点击右侧的三个点——&amp;gt;选择revoke&lt;/li&gt;
+&lt;li&gt;接着我们看到会问你Are you sure you want to revoke authorization？，我们直接同意即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;怎样删除github生成-gpg-密钥&#34;&gt;怎样删除github生成 GPG 密钥&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;gpg --delete-secret-key 要删除的密钥ID。&lt;/li&gt;
+&lt;li&gt;回车后提示...(y/n)&lt;/li&gt;
+&lt;li&gt;创建见官网&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;关于gridea无用文件的清理&#34;&gt;关于Gridea无用文件的清理&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;首先在Gridea界面删除掉自己想删除的文件&lt;/li&gt;
+&lt;li&gt;然后到Gridea本地目录下，将output文件下的.git文件删除&lt;/li&gt;
+&lt;li&gt;最后再点一下检测远程连接，同步。&lt;/li&gt;
+&lt;/ul&gt;
+">Gridea+Github创建静态博客教程</a>
       </div>
       
       <div class="item">

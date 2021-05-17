@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zfl1001.github.io</id>
     <title>zfl</title>
-    <updated>2021-05-17T14:25:55.381Z</updated>
+    <updated>2021-05-17T15:31:14.545Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zfl1001.github.io"/>
     <link rel="self" href="https://zfl1001.github.io/atom.xml"/>
@@ -11,11 +11,32 @@
     <icon>https://zfl1001.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, zfl</rights>
     <entry>
+        <title type="html"><![CDATA[Git的报错]]></title>
+        <id>https://zfl1001.github.io/post/git-bug/</id>
+        <link href="https://zfl1001.github.io/post/git-bug/">
+        </link>
+        <updated>2021-05-17T15:03:25.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[VScode快捷键]]></title>
+        <id>https://zfl1001.github.io/post/vscode-kuai-jie-jian/</id>
+        <link href="https://zfl1001.github.io/post/vscode-kuai-jie-jian/">
+        </link>
+        <updated>2021-05-16T14:58:10.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MySQL报错解决方法]]></title>
+        <id>https://zfl1001.github.io/post/mysql-bug/</id>
+        <link href="https://zfl1001.github.io/post/mysql-bug/">
+        </link>
+        <updated>2021-05-15T04:51:23.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Win10下安装MySQL]]></title>
         <id>https://zfl1001.github.io/post/win10-mysql/</id>
         <link href="https://zfl1001.github.io/post/win10-mysql/">
         </link>
-        <updated>2021-05-15T15:47:18.000Z</updated>
+        <updated>2021-05-15T01:27:18.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[CentOS 7下常用软件的安装]]></title>
@@ -30,6 +51,13 @@
         <link href="https://zfl1001.github.io/post/vmware15-centos7/">
         </link>
         <updated>2021-04-06T03:11:33.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Gridea+Github创建静态博客教程]]></title>
+        <id>https://zfl1001.github.io/post/gridea-github/</id>
+        <link href="https://zfl1001.github.io/post/gridea-github/">
+        </link>
+        <updated>2021-04-03T07:25:42.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello World!]]></title>
