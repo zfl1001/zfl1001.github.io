@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#3bc9db">
-<title>zfl</title>
+<title>Win10下安装MySQL | zfl</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1621224952991">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,6 +38,8 @@
 
 
 
+  <meta name="description" content="Win10下安装MySQL" />
+  <meta name="keywords" content="MySQL" />
 </head>
 
 <body>
@@ -73,7 +75,7 @@
             
               
             
-            <li class="nav-item nav-item-active">
+            <li class="nav-item ">
               
               
                 <a href="/" target="_self">
@@ -172,8 +174,24 @@
     <div
       class="section-layout pisces ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -214,27 +232,309 @@
   </div>
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#%E4%B8%80-%E6%89%93%E5%BC%80vmware-15%E7%82%B9%E5%87%BB%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%80%89%E6%8B%A9%E8%87%AA%E5%AE%9A%E4%B9%89%E9%AB%98%E7%BA%A7%E9%80%89%E9%A1%B9%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E6%AD%A5">一、打开VMware 15，点击创建新的虚拟机，选择“自定义（高级）”选项，点击【下一步】</a></li>
+<li><a href="#%E4%BA%8C-%E7%BB%A7%E7%BB%AD%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E6%AD%A5%E5%9C%A8%E5%87%BA%E7%8E%B0%E4%B8%8B%E9%9D%A2%E7%95%8C%E9%9D%A2%E9%80%89%E4%B8%AD%E7%A8%8D%E5%90%8E%E5%AE%89%E8%A3%85%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%80%89%E9%A1%B9%E4%B8%8B%E4%B8%80%E6%AD%A5">二、继续点击【下一步】，在出现下面界面，选中“稍后安装操作系统”选项，【下一步】</a></li>
+<li><a href="#%E4%B8%89-%E5%AE%A2%E6%88%B7%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%80%89%E6%8B%A9linux%E7%89%88%E6%9C%AC%E9%80%89%E6%8B%A9centos-7-64%E4%BD%8D%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E6%AD%A5">三、客户机操作系统选择“linux”，版本选择“CentOS 7 64位”，点击【下一步】</a></li>
+<li><a href="#%E5%9B%9B-%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%E8%BE%93%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%8D%E7%A7%B0%E5%BB%BA%E8%AE%AE%E5%91%BD%E5%90%8D%E4%B8%BAcentos-7%E6%9B%B4%E6%94%B9%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E6%AD%A5">四、出现如下界面，输入自定义虚拟机名称（建议命名为CentOS 7），更改安装路径，然后点击【下一步】</a></li>
+<li><a href="#%E4%BA%94-%E5%87%BA%E7%8E%B0%E4%B8%8B%E9%9D%A2%E7%95%8C%E9%9D%A2%E9%80%89%E6%8B%A9%E5%A4%84%E7%90%86%E5%99%A8%E6%95%B0%E9%87%8F%E5%92%8C%E6%AF%8F%E4%B8%AA%E5%A4%84%E7%90%86%E5%99%A8%E6%A0%B8%E5%BF%83%E6%95%B0%E9%87%8F%E8%BF%99%E9%87%8C%E5%88%86%E5%88%AB%E6%98%AF1%E5%92%8C3%E4%B8%8B%E4%B8%80%E6%AD%A5">五、出现下面界面，选择处理器数量和每个处理器核心数量，这里分别是1和3，【下一步】</a></li>
+<li><a href="#%E5%85%AD-%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%E6%8C%87%E5%AE%9A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8D%A0%E7%94%A8%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F%E8%BF%99%E9%87%8C%E6%98%AF2048m%E4%B8%8B%E4%B8%80%E6%AD%A5">六、出现如下界面，指定虚拟机占用内存大小，这里是2048M，【下一步】</a></li>
+<li><a href="#%E4%B8%83-%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%E9%80%89%E6%8B%A9%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E7%B1%BB%E5%9E%8B%E8%BF%99%E9%87%8C%E9%80%89%E6%8B%A9%E4%BD%BF%E7%94%A8%E6%A1%A5%E6%8E%A5%E7%BD%91%E7%BB%9C%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E6%AD%A5">七、出现如下界面，选择网络连接类型，这里选择“使用桥接网络”，然后点击【下一步】</a></li>
+<li><a href="#%E5%85%AB-%E9%BB%98%E8%AE%A4%E4%B8%8B%E4%B8%80%E6%AD%A5%E9%BB%98%E8%AE%A4%E4%B8%8B%E4%B8%80%E6%AD%A5%E9%BB%98%E8%AE%A4%E4%B8%8B%E4%B8%80%E6%AD%A5">八、默认【下一步】，默认【下一步】，默认【下一步】</a></li>
+<li><a href="#%E4%B9%9D-%E5%87%BA%E7%8E%B0%E4%B8%8B%E9%9D%A2%E7%95%8C%E9%9D%A2%E8%BE%93%E5%85%A5%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F%E9%BB%98%E8%AE%A420g%E4%B8%80%E8%88%AC%E4%B8%8D%E5%A4%9F%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE%E8%AE%BE%E7%BD%AE%E7%95%A5%E5%A4%A7%E4%B8%80%E4%BA%9B%E8%BF%99%E9%87%8C%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F%E4%B8%BA50g%E4%B8%8B%E4%B8%80%E6%AD%A5">九、出现下面界面，输入虚拟机磁盘大小，默认20g一般不够使用，建议设置略大一些，这里设置虚拟机磁盘大小为50G，【下一步】</a></li>
+<li><a href="#%E5%8D%81-%E9%BB%98%E8%AE%A4%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%82%B9%E5%87%BB%E5%AE%8C%E6%88%90%E7%BB%93%E6%9D%9F%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA">十、默认【下一步】，点击【完成】结束虚拟机创建：</a></li>
+<li><a href="#%E5%8D%81%E4%B8%80-%E9%80%80%E5%87%BA%E5%AE%89%E8%A3%85%E5%90%91%E5%AF%BC%E5%90%8E%E7%82%B9%E5%87%BB%E7%BC%96%E8%BE%91%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%80%89%E9%A1%B9%E7%84%B6%E5%90%8E%E6%8C%87%E5%AE%9Acddvd%E9%95%9C%E5%83%8F%E6%96%87%E4%BB%B6%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E7%A1%AE%E5%AE%9A%E8%AE%BE%E7%BD%AE%E5%90%8E%E7%95%8C%E9%9D%A2%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA">十一、退出安装向导后，点击【编辑虚拟机设置】选项，然后指定【CD/DVD】镜像文件，然后点击【确定】，设置后界面如下图所示</a></li>
+<li><a href="#%E5%8D%81%E4%BA%8C-%E7%82%B9%E5%87%BB%E5%BC%80%E5%90%AF%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BF%9B%E5%85%A5centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B">十二、点击开启虚拟机进入CentOS7操作系统安装过程：</a></li>
+<li><a href="#%E5%8D%81%E4%B8%89-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%87%BA%E7%8E%B0%E7%95%8C%E9%9D%A2%E9%80%89%E6%8B%A9install-centos-7%E7%82%B9%E5%87%BB%E5%9B%9E%E8%BD%A6%E9%94%AE%E7%BB%A7%E7%BB%AD">十三、虚拟机控制台出现界面，选择【Install CentOS 7】，点击【回车】键继续：</a></li>
+<li><a href="#%E5%8D%81%E5%9B%9B-%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%E5%BB%BA%E8%AE%AE%E7%9B%B4%E6%8E%A5%E9%80%89%E6%8B%A9%E9%BB%98%E8%AE%A4%E7%9A%84%E6%98%AFenglish%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BBcontinue-%E6%88%91%E8%BF%99%E5%B0%B1%E9%80%89%E6%8B%A9%E4%B8%AD%E6%96%87%E4%BA%86">十四、如下界面建议直接选择默认的是【English】，然后点击【Continue】。（我这就选择【中文】了）</a></li>
+<li><a href="#%E5%8D%81%E4%BA%94-%E7%84%B6%E5%90%8E%E5%87%BA%E7%8E%B0%E4%B8%8B%E9%9D%A2%E4%B8%AA%E7%95%8C%E9%9D%A2%E5%AF%B9%E6%97%B6%E9%97%B4%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E8%BD%AF%E4%BB%B6%E9%80%89%E6%8B%A9%E6%88%91%E8%BF%99%E9%80%89%E4%BA%86%E5%B8%A6ui%E7%9A%84gnome-%E6%A1%8C%E9%9D%A2%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E9%80%89%E6%8B%A9%E7%9A%84%E5%8C%BA%E5%88%AB%E8%AF%B7%E8%87%AA%E8%A1%8C%E7%99%BE%E5%BA%A6">十五、然后出现下面个界面，对时间进行修改，然后点击【软件选择】，我这选了带UI的【GNOME 桌面】，其他【软件选择】的区别请自行百度</a></li>
+<li><a href="#%E5%8D%81%E5%85%AD-%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE">十六、然后点击【安装位置】</a></li>
+<li><a href="#%E5%8D%81%E4%B8%83-%E7%82%B9%E5%87%BB%E7%A3%81%E7%9B%98%E9%80%89%E6%8B%A9%E6%88%91%E8%A6%81%E9%85%8D%E7%BD%AE%E5%88%86%E5%8C%BA%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E5%AE%8C%E6%88%90%E5%A6%82%E5%9B%BE%E6%89%80%E7%A4%BA">十七、点击磁盘，选择【我要配置分区】，然后点击【完成】,如图所示</a></li>
+<li><a href="#%E5%8D%81%E5%85%AB-%E5%BC%B9%E5%87%BA%E7%9A%84%E7%95%8C%E9%9D%A2%E4%B8%AD%E7%82%B9%E5%87%BB%E8%93%9D%E8%89%B2%E7%9A%84%E5%9C%B0%E6%96%B9%E7%82%B9%E8%BF%99%E9%87%8C%E8%87%AA%E5%8A%A8%E5%88%9B%E5%BB%BA%E4%BB%96%E4%BB%AC%E5%BC%B9%E5%87%BA%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2">十八、弹出的界面中，点击蓝色的地方【点这里自动创建他们】，弹出如下界面</a></li>
+<li><a href="#%E5%8D%81%E4%B9%9D-%E8%A7%84%E5%88%92%E5%90%8E%E7%95%8C%E9%9D%A2%E5%A6%82%E4%B8%8B%E7%82%B9%E5%87%BB%E5%AE%8C%E6%88%90%E5%9C%A8%E5%BC%B9%E5%87%BA%E5%AF%B9%E8%AF%9D%E6%A1%86%E4%B8%AD%E7%82%B9%E5%87%BB%E6%8E%A5%E5%8F%97%E6%9B%B4%E6%94%B9">十九、规划后界面如下，点击【完成】，在弹出对话框中点击【接受更改】</a></li>
+<li><a href="#%E4%BA%8C%E5%8D%81-%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E7%BD%91%E7%BB%9C%E5%92%8C%E4%B8%BB%E6%9C%BA%E5%90%8D%E4%BF%AE%E6%94%B9%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%BB%E6%9C%BA%E5%90%8D%E8%BF%99%E9%87%8C%E4%BF%AE%E6%94%B9%E4%B8%BAdb06%E7%82%B9%E5%87%BB%E5%BA%94%E7%94%A8%E7%82%B9%E5%87%BB%E5%8F%B3%E4%B8%8A%E8%A7%92%E7%9A%84%E5%BC%80%E5%85%B3%E5%A6%82%E5%9B%BE%E6%89%80%E7%A4%BA%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E5%AE%8C%E6%88%90">二十、然后点击【网络和主机名】，修改操作系统主机名，这里修改为db06，点击【应用】，点击右上角的开关，如图所示，然后点击【完成】</a></li>
+<li><a href="#%E4%BA%8C%E5%8D%81%E4%B8%80-%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E5%8F%B3%E4%B8%8B%E8%A7%92%E7%9A%84%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85b">二十一、然后点击右下角的【开始安装(B)】</a></li>
+<li><a href="#%E4%BA%8C%E5%8D%81%E4%BA%8C-%E4%BF%AE%E6%94%B9root%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E7%82%B9%E5%87%BBroot%E5%AF%86%E7%A0%81%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E7%A1%AE%E5%AE%9A%E5%BD%93%E5%8F%B3%E4%B8%8B%E8%A7%92%E5%87%BA%E7%8E%B0%E9%87%8D%E5%90%AF%E6%97%B6%E7%82%B9%E5%87%BB%E9%87%8D%E5%90%AF">二十二、修改root用户密码，点击【ROOT密码】输入密码，然后点击【确定】，当右下角出现【重启】时点击【重启】</a></li>
+<li><a href="#%E4%BA%8C%E5%8D%81%E4%B8%89-%E9%87%8D%E5%90%AF%E5%90%8E%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%E7%82%B9%E5%87%BBlicensing%E7%84%B6%E5%90%8E%E5%BC%B9%E5%87%BA%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%E7%82%B9%E5%87%BB%E5%90%8C%E6%84%8F%E8%AE%B8%E5%8F%AF%E7%82%B9%E5%87%BB%E5%AE%8C%E6%88%90%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E5%8F%B3%E4%B8%8B%E8%A7%92%E7%9A%84%E5%AE%8C%E6%88%90%E9%85%8D%E7%BD%AE">二十三、重启后出现如下界面，点击【LICENSING.....】，然后弹出如下界面，点击【同意许可】，点击【完成】，然后点击右下角的【完成配置】</a></li>
+<li><a href="#%E4%BA%8C%E5%8D%81%E5%9B%9B-%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E6%A3%80%E6%9F%A5%E7%BD%91%E7%BB%9C%E6%98%AF%E5%90%A6%E8%BF%9E%E9%80%9A">二十四、配置网络，检查网络是否连通</a>
+<ul>
+<li><a href="#1%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF%E5%88%87%E6%8D%A2%E5%88%B0root%E7%94%A8%E6%88%B7%E5%A6%82%E6%9E%9C%E5%B7%B2%E7%BB%8F%E6%98%AFroot%E7%94%A8%E6%88%B7%E5%BF%BD%E7%95%A5">1.打开终端切换到root用户，如果已经是root用户忽略</a></li>
+<li><a href="#2%E8%BE%93%E5%85%A5ip-add%E5%9B%9E%E8%BD%A6%E6%9F%A5%E7%9C%8B%E6%98%AF%E5%90%A6%E6%98%AFens32%E6%88%91%E8%BF%99%E6%98%AFens32">2.输入ip add，回车，查看是否是ens32，我这是ens32</a></li>
+<li><a href="#3%E7%84%B6%E5%90%8E%E8%BE%93%E5%85%A5-vi-etcsysconfignetwork-scriptsifcfg-ens32%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%98%AFens32%E5%88%99%E6%8A%8Aens32%E6%94%B9%E4%B8%BA%E7%9B%B8%E5%BA%94%E7%9A%84%E5%8D%B3%E5%8F%AF">3.然后输入 vi /etc/sysconfig/network-scripts/ifcfg-ens32,如果不是ens32则把ens32改为相应的即可。</a></li>
+<li><a href="#4%E6%8C%89%E5%AD%97%E7%AC%A6%E9%94%AEi%E8%BF%9B%E5%85%A5%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F%E5%B0%86bootprpto%E7%9A%84%E5%80%BC%E6%94%B9%E6%88%90staticonboot%E7%9A%84%E5%80%BC%E6%94%B9%E6%88%90yes%E5%9C%A8%E4%B8%8B%E9%9D%A2%E6%B7%BB%E5%8A%A0%E4%B8%8B%E9%9D%A2%E5%87%A0%E5%8F%A5%E6%9C%80%E5%90%8E%E7%BB%93%E6%9E%9C%E5%A6%82%E5%9B%BE%E4%B8%8B%E6%89%80%E7%A4%BA%E6%8C%89esc%E9%94%AE%E5%90%8E%E8%BE%93%E5%85%A5wq%E5%9B%9E%E8%BD%A6%E5%AE%8C%E6%88%90%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91">4.按字符键“i”进入编辑模式，将**BOOTPRPTO的值改成static，ONBOOT的值改成yes，**在下面添加下面几句,最后结果如图下所示，按“esc”键后，输入:wq回车，完成配置文件编辑。</a></li>
+<li><a href="#5%E8%BE%93%E5%85%A5service-network-restart%E5%91%BD%E4%BB%A4%E9%87%8D%E5%90%AF%E7%BD%91%E5%8D%A1%E8%BE%93%E5%85%A5ifconfig%E7%BB%93%E6%9E%9C%E5%A6%82%E4%B8%8B">5.输入：service network restart命令重启网卡，输入：ifconfig，结果如下</a></li>
+<li><a href="#6%E6%89%93%E5%BC%80firefox%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5wwwbaiducom%E6%A3%80%E6%9F%A5%E7%BD%91%E7%BB%9C%E6%98%AF%E5%90%A6%E8%BF%9E%E9%80%9A-%E8%8B%A5%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%E5%88%99%E8%A1%A8%E7%A4%BA%E6%88%90%E5%8A%9F%E4%BA%86">6.打开Firefox浏览器，输入：www.baidu.com,检查网络是否连通。若如下图所示则表示成功了</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
 </div>
+
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
       }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
     });
   }
-  </script>
-        <div class="section-box pisces">
-          <section class="section bg-color posts-expand slide-down-in">
-            
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
   <h1 class="post-title">
     <a class="post-title-link" href="https://zfl1001.github.io/post/win10-mysql/">
       Win10下安装MySQL
@@ -274,243 +574,228 @@
     
   </div>
 </section>
-      <div class="post-body">
-        
-        
-          
-            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
-            
-            
-              
-              
-              
-            
-              
-              
-              
-            
-              
-              
-              
-            
-            
-              <p><p><ul class="markdownIt-TOC">
+            <div class="post-body next-md-body" id="post_body">
+              <p><ul class="markdownIt-TOC">
 <li><a href="#%E4%B8%80-%E6%89%93%E5%BC%80vmware-15%E7%82%B9%E5%87%BB%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%80%89%E6%8B%A9%E8%87%AA%E5%AE%9A%E4%B9%89%E9%AB%98%E7%BA%A7%E9%80%89%E9%A1%B9%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E6%AD%A5">一、打开VMware 15，点击创建新的虚拟机，选择“自定义（高级）”选项，点击【下一步】</a></li>
 <li><a href="#%E4%BA%8C-%E7%BB%A7%E7%BB%AD%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E6%AD%A5%E5%9C%A8%E5%87%BA%E7%8E%B0%E4%B8%8B%E9%9D%A2%E7%95%8C%E9%9D%A2%E9%80%89%E4%B8%AD%E7%A8%8D%E5%90%8E%E5%AE%89%E8%A3%85%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%80%89%E9%A1%B9%E4%B8%8B%E4%B8%80%E6%AD%A5">二、继续点击【下一步】，在出现下面界面，选中“稍后安装操作系统”选项，【下一步】</a></li>
+<li><a href="#%E4%B8%89-%E5%AE%A2%E6%88%B7%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%80%89%E6%8B%A9linux%E7%89%88%E6%9C%AC%E9%80%89%E6%8B%A9centos-7-64%E4%BD%8D%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E6%AD%A5">三、客户机操作系统选择“linux”，版本选择“CentOS 7 64位”，点击【下一步】</a></li>
+<li><a href="#%E5%9B%9B-%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%E8%BE%93%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%8D%E7%A7%B0%E5%BB%BA%E8%AE%AE%E5%91%BD%E5%90%8D%E4%B8%BAcentos-7%E6%9B%B4%E6%94%B9%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E6%AD%A5">四、出现如下界面，输入自定义虚拟机名称（建议命名为CentOS 7），更改安装路径，然后点击【下一步】</a></li>
+<li><a href="#%E4%BA%94-%E5%87%BA%E7%8E%B0%E4%B8%8B%E9%9D%A2%E7%95%8C%E9%9D%A2%E9%80%89%E6%8B%A9%E5%A4%84%E7%90%86%E5%99%A8%E6%95%B0%E9%87%8F%E5%92%8C%E6%AF%8F%E4%B8%AA%E5%A4%84%E7%90%86%E5%99%A8%E6%A0%B8%E5%BF%83%E6%95%B0%E9%87%8F%E8%BF%99%E9%87%8C%E5%88%86%E5%88%AB%E6%98%AF1%E5%92%8C3%E4%B8%8B%E4%B8%80%E6%AD%A5">五、出现下面界面，选择处理器数量和每个处理器核心数量，这里分别是1和3，【下一步】</a></li>
+<li><a href="#%E5%85%AD-%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%E6%8C%87%E5%AE%9A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8D%A0%E7%94%A8%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F%E8%BF%99%E9%87%8C%E6%98%AF2048m%E4%B8%8B%E4%B8%80%E6%AD%A5">六、出现如下界面，指定虚拟机占用内存大小，这里是2048M，【下一步】</a></li>
+<li><a href="#%E4%B8%83-%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%E9%80%89%E6%8B%A9%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E7%B1%BB%E5%9E%8B%E8%BF%99%E9%87%8C%E9%80%89%E6%8B%A9%E4%BD%BF%E7%94%A8%E6%A1%A5%E6%8E%A5%E7%BD%91%E7%BB%9C%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E6%AD%A5">七、出现如下界面，选择网络连接类型，这里选择“使用桥接网络”，然后点击【下一步】</a></li>
+<li><a href="#%E5%85%AB-%E9%BB%98%E8%AE%A4%E4%B8%8B%E4%B8%80%E6%AD%A5%E9%BB%98%E8%AE%A4%E4%B8%8B%E4%B8%80%E6%AD%A5%E9%BB%98%E8%AE%A4%E4%B8%8B%E4%B8%80%E6%AD%A5">八、默认【下一步】，默认【下一步】，默认【下一步】</a></li>
+<li><a href="#%E4%B9%9D-%E5%87%BA%E7%8E%B0%E4%B8%8B%E9%9D%A2%E7%95%8C%E9%9D%A2%E8%BE%93%E5%85%A5%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F%E9%BB%98%E8%AE%A420g%E4%B8%80%E8%88%AC%E4%B8%8D%E5%A4%9F%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE%E8%AE%BE%E7%BD%AE%E7%95%A5%E5%A4%A7%E4%B8%80%E4%BA%9B%E8%BF%99%E9%87%8C%E8%AE%BE%E7%BD%AE%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F%E4%B8%BA50g%E4%B8%8B%E4%B8%80%E6%AD%A5">九、出现下面界面，输入虚拟机磁盘大小，默认20g一般不够使用，建议设置略大一些，这里设置虚拟机磁盘大小为50G，【下一步】</a></li>
+<li><a href="#%E5%8D%81-%E9%BB%98%E8%AE%A4%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%82%B9%E5%87%BB%E5%AE%8C%E6%88%90%E7%BB%93%E6%9D%9F%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA">十、默认【下一步】，点击【完成】结束虚拟机创建：</a></li>
+<li><a href="#%E5%8D%81%E4%B8%80-%E9%80%80%E5%87%BA%E5%AE%89%E8%A3%85%E5%90%91%E5%AF%BC%E5%90%8E%E7%82%B9%E5%87%BB%E7%BC%96%E8%BE%91%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E9%80%89%E9%A1%B9%E7%84%B6%E5%90%8E%E6%8C%87%E5%AE%9Acddvd%E9%95%9C%E5%83%8F%E6%96%87%E4%BB%B6%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E7%A1%AE%E5%AE%9A%E8%AE%BE%E7%BD%AE%E5%90%8E%E7%95%8C%E9%9D%A2%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA">十一、退出安装向导后，点击【编辑虚拟机设置】选项，然后指定【CD/DVD】镜像文件，然后点击【确定】，设置后界面如下图所示</a></li>
+<li><a href="#%E5%8D%81%E4%BA%8C-%E7%82%B9%E5%87%BB%E5%BC%80%E5%90%AF%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BF%9B%E5%85%A5centos7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B">十二、点击开启虚拟机进入CentOS7操作系统安装过程：</a></li>
+<li><a href="#%E5%8D%81%E4%B8%89-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%87%BA%E7%8E%B0%E7%95%8C%E9%9D%A2%E9%80%89%E6%8B%A9install-centos-7%E7%82%B9%E5%87%BB%E5%9B%9E%E8%BD%A6%E9%94%AE%E7%BB%A7%E7%BB%AD">十三、虚拟机控制台出现界面，选择【Install CentOS 7】，点击【回车】键继续：</a></li>
+<li><a href="#%E5%8D%81%E5%9B%9B-%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%E5%BB%BA%E8%AE%AE%E7%9B%B4%E6%8E%A5%E9%80%89%E6%8B%A9%E9%BB%98%E8%AE%A4%E7%9A%84%E6%98%AFenglish%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BBcontinue-%E6%88%91%E8%BF%99%E5%B0%B1%E9%80%89%E6%8B%A9%E4%B8%AD%E6%96%87%E4%BA%86">十四、如下界面建议直接选择默认的是【English】，然后点击【Continue】。（我这就选择【中文】了）</a></li>
+<li><a href="#%E5%8D%81%E4%BA%94-%E7%84%B6%E5%90%8E%E5%87%BA%E7%8E%B0%E4%B8%8B%E9%9D%A2%E4%B8%AA%E7%95%8C%E9%9D%A2%E5%AF%B9%E6%97%B6%E9%97%B4%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E8%BD%AF%E4%BB%B6%E9%80%89%E6%8B%A9%E6%88%91%E8%BF%99%E9%80%89%E4%BA%86%E5%B8%A6ui%E7%9A%84gnome-%E6%A1%8C%E9%9D%A2%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E9%80%89%E6%8B%A9%E7%9A%84%E5%8C%BA%E5%88%AB%E8%AF%B7%E8%87%AA%E8%A1%8C%E7%99%BE%E5%BA%A6">十五、然后出现下面个界面，对时间进行修改，然后点击【软件选择】，我这选了带UI的【GNOME 桌面】，其他【软件选择】的区别请自行百度</a></li>
+<li><a href="#%E5%8D%81%E5%85%AD-%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE">十六、然后点击【安装位置】</a></li>
+<li><a href="#%E5%8D%81%E4%B8%83-%E7%82%B9%E5%87%BB%E7%A3%81%E7%9B%98%E9%80%89%E6%8B%A9%E6%88%91%E8%A6%81%E9%85%8D%E7%BD%AE%E5%88%86%E5%8C%BA%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E5%AE%8C%E6%88%90%E5%A6%82%E5%9B%BE%E6%89%80%E7%A4%BA">十七、点击磁盘，选择【我要配置分区】，然后点击【完成】,如图所示</a></li>
+<li><a href="#%E5%8D%81%E5%85%AB-%E5%BC%B9%E5%87%BA%E7%9A%84%E7%95%8C%E9%9D%A2%E4%B8%AD%E7%82%B9%E5%87%BB%E8%93%9D%E8%89%B2%E7%9A%84%E5%9C%B0%E6%96%B9%E7%82%B9%E8%BF%99%E9%87%8C%E8%87%AA%E5%8A%A8%E5%88%9B%E5%BB%BA%E4%BB%96%E4%BB%AC%E5%BC%B9%E5%87%BA%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2">十八、弹出的界面中，点击蓝色的地方【点这里自动创建他们】，弹出如下界面</a></li>
+<li><a href="#%E5%8D%81%E4%B9%9D-%E8%A7%84%E5%88%92%E5%90%8E%E7%95%8C%E9%9D%A2%E5%A6%82%E4%B8%8B%E7%82%B9%E5%87%BB%E5%AE%8C%E6%88%90%E5%9C%A8%E5%BC%B9%E5%87%BA%E5%AF%B9%E8%AF%9D%E6%A1%86%E4%B8%AD%E7%82%B9%E5%87%BB%E6%8E%A5%E5%8F%97%E6%9B%B4%E6%94%B9">十九、规划后界面如下，点击【完成】，在弹出对话框中点击【接受更改】</a></li>
+<li><a href="#%E4%BA%8C%E5%8D%81-%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E7%BD%91%E7%BB%9C%E5%92%8C%E4%B8%BB%E6%9C%BA%E5%90%8D%E4%BF%AE%E6%94%B9%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%BB%E6%9C%BA%E5%90%8D%E8%BF%99%E9%87%8C%E4%BF%AE%E6%94%B9%E4%B8%BAdb06%E7%82%B9%E5%87%BB%E5%BA%94%E7%94%A8%E7%82%B9%E5%87%BB%E5%8F%B3%E4%B8%8A%E8%A7%92%E7%9A%84%E5%BC%80%E5%85%B3%E5%A6%82%E5%9B%BE%E6%89%80%E7%A4%BA%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E5%AE%8C%E6%88%90">二十、然后点击【网络和主机名】，修改操作系统主机名，这里修改为db06，点击【应用】，点击右上角的开关，如图所示，然后点击【完成】</a></li>
+<li><a href="#%E4%BA%8C%E5%8D%81%E4%B8%80-%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E5%8F%B3%E4%B8%8B%E8%A7%92%E7%9A%84%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85b">二十一、然后点击右下角的【开始安装(B)】</a></li>
+<li><a href="#%E4%BA%8C%E5%8D%81%E4%BA%8C-%E4%BF%AE%E6%94%B9root%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E7%82%B9%E5%87%BBroot%E5%AF%86%E7%A0%81%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E7%A1%AE%E5%AE%9A%E5%BD%93%E5%8F%B3%E4%B8%8B%E8%A7%92%E5%87%BA%E7%8E%B0%E9%87%8D%E5%90%AF%E6%97%B6%E7%82%B9%E5%87%BB%E9%87%8D%E5%90%AF">二十二、修改root用户密码，点击【ROOT密码】输入密码，然后点击【确定】，当右下角出现【重启】时点击【重启】</a></li>
+<li><a href="#%E4%BA%8C%E5%8D%81%E4%B8%89-%E9%87%8D%E5%90%AF%E5%90%8E%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%E7%82%B9%E5%87%BBlicensing%E7%84%B6%E5%90%8E%E5%BC%B9%E5%87%BA%E5%A6%82%E4%B8%8B%E7%95%8C%E9%9D%A2%E7%82%B9%E5%87%BB%E5%90%8C%E6%84%8F%E8%AE%B8%E5%8F%AF%E7%82%B9%E5%87%BB%E5%AE%8C%E6%88%90%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BB%E5%8F%B3%E4%B8%8B%E8%A7%92%E7%9A%84%E5%AE%8C%E6%88%90%E9%85%8D%E7%BD%AE">二十三、重启后出现如下界面，点击【LICENSING.....】，然后弹出如下界面，点击【同意许可】，点击【完成】，然后点击右下角的【完成配置】</a></li>
+<li><a href="#%E4%BA%8C%E5%8D%81%E5%9B%9B-%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E6%A3%80%E6%9F%A5%E7%BD%91%E7%BB%9C%E6%98%AF%E5%90%A6%E8%BF%9E%E9%80%9A">二十四、配置网络，检查网络是否连通</a>
+<ul>
+<li><a href="#1%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF%E5%88%87%E6%8D%A2%E5%88%B0root%E7%94%A8%E6%88%B7%E5%A6%82%E6%9E%9C%E5%B7%B2%E7%BB%8F%E6%98%AFroot%E7%94%A8%E6%88%B7%E5%BF%BD%E7%95%A5">1.打开终端切换到root用户，如果已经是root用户忽略</a></li>
+<li><a href="#2%E8%BE%93%E5%85%A5ip-add%E5%9B%9E%E8%BD%A6%E6%9F%A5%E7%9C%8B%E6%98%AF%E5%90%A6%E6%98%AFens32%E6%88%91%E8%BF%99%E6%98%AFens32">2.输入ip add，回车，查看是否是ens32，我这是ens32</a></li>
+<li><a href="#3%E7%84%B6%E5%90%8E%E8%BE%93%E5%85%A5-vi-etcsysconfignetwork-scriptsifcfg-ens32%E5%A6%82%E6%9E%9C%E4%B8%8D%E6%98%AFens32%E5%88%99%E6%8A%8Aens32%E6%94%B9%E4%B8%BA%E7%9B%B8%E5%BA%94%E7%9A%84%E5%8D%B3%E5%8F%AF">3.然后输入 vi /etc/sysconfig/network-scripts/ifcfg-ens32,如果不是ens32则把ens32改为相应的即可。</a></li>
+<li><a href="#4%E6%8C%89%E5%AD%97%E7%AC%A6%E9%94%AEi%E8%BF%9B%E5%85%A5%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F%E5%B0%86bootprpto%E7%9A%84%E5%80%BC%E6%94%B9%E6%88%90staticonboot%E7%9A%84%E5%80%BC%E6%94%B9%E6%88%90yes%E5%9C%A8%E4%B8%8B%E9%9D%A2%E6%B7%BB%E5%8A%A0%E4%B8%8B%E9%9D%A2%E5%87%A0%E5%8F%A5%E6%9C%80%E5%90%8E%E7%BB%93%E6%9E%9C%E5%A6%82%E5%9B%BE%E4%B8%8B%E6%89%80%E7%A4%BA%E6%8C%89esc%E9%94%AE%E5%90%8E%E8%BE%93%E5%85%A5wq%E5%9B%9E%E8%BD%A6%E5%AE%8C%E6%88%90%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91">4.按字符键“i”进入编辑模式，将**BOOTPRPTO的值改成static，ONBOOT的值改成yes，**在下面添加下面几句,最后结果如图下所示，按“esc”键后，输入:wq回车，完成配置文件编辑。</a></li>
+<li><a href="#5%E8%BE%93%E5%85%A5service-network-restart%E5%91%BD%E4%BB%A4%E9%87%8D%E5%90%AF%E7%BD%91%E5%8D%A1%E8%BE%93%E5%85%A5ifconfig%E7%BB%93%E6%9E%9C%E5%A6%82%E4%B8%8B">5.输入：service network restart命令重启网卡，输入：ifconfig，结果如下</a></li>
+<li><a href="#6%E6%89%93%E5%BC%80firefox%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5wwwbaiducom%E6%A3%80%E6%9F%A5%E7%BD%91%E7%BB%9C%E6%98%AF%E5%90%A6%E8%BF%9E%E9%80%9A-%E8%8B%A5%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%E5%88%99%E8%A1%A8%E7%A4%BA%E6%88%90%E5%8A%9F%E4%BA%86">6.打开Firefox浏览器，输入：www.baidu.com,检查网络是否连通。若如下图所示则表示成功了</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<h1 id="一-打开vmware-15点击创建新的虚拟机选择自定义高级选项点击下一步">一、打开VMware 15，点击创建新的虚拟机，选择“自定义（高级）”选项，点击【下一步】</h1>
+<figure data-type="image" tabindex="1"><img src="https://zfl1001.github.io/post-images/1621146055231.gif" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://zfl1001.github.io/post-images/1621146069692.gif" alt="" loading="lazy"></figure>
+<h1 id="二-继续点击下一步在出现下面界面选中稍后安装操作系统选项下一步">二、继续点击【下一步】，在出现下面界面，选中“稍后安装操作系统”选项，【下一步】</h1>
+<figure data-type="image" tabindex="3"><img src="https://zfl1001.github.io/post-images/1621146078970.gif" alt="" loading="lazy"></figure>
+<h1 id="三-客户机操作系统选择linux版本选择centos-7-64位点击下一步">三、客户机操作系统选择“linux”，版本选择“CentOS 7 64位”，点击【下一步】</h1>
+<figure data-type="image" tabindex="4"><img src="https://zfl1001.github.io/post-images/1621146088004.gif" alt="" loading="lazy"></figure>
+<h1 id="四-出现如下界面输入自定义虚拟机名称建议命名为centos-7更改安装路径然后点击下一步">四、出现如下界面，输入自定义虚拟机名称（建议命名为CentOS 7），更改安装路径，然后点击【下一步】</h1>
+<figure data-type="image" tabindex="5"><img src="https://zfl1001.github.io/post-images/1621146099035.gif" alt="" loading="lazy"></figure>
+<h1 id="五-出现下面界面选择处理器数量和每个处理器核心数量这里分别是1和3下一步">五、出现下面界面，选择处理器数量和每个处理器核心数量，这里分别是1和3，【下一步】</h1>
+<figure data-type="image" tabindex="6"><img src="https://zfl1001.github.io/post-images/1621146111097.gif" alt="" loading="lazy"></figure>
+<h1 id="六-出现如下界面指定虚拟机占用内存大小这里是2048m下一步">六、出现如下界面，指定虚拟机占用内存大小，这里是2048M，【下一步】</h1>
+<figure data-type="image" tabindex="7"><img src="https://zfl1001.github.io/post-images/1621146118473.gif" alt="" loading="lazy"></figure>
+<h1 id="七-出现如下界面选择网络连接类型这里选择使用桥接网络然后点击下一步">七、出现如下界面，选择网络连接类型，这里选择“使用桥接网络”，然后点击【下一步】</h1>
+<ul>
+<li>
+<p>使用桥接网络：虚拟机ip与本机在同一网段，本机与虚拟机可以通过ip互通，本机联网状态下虚拟机即可联网，同时虚拟机与本网段内其他主机可以互通，这种模式常用于服务器环境架构中。</p>
+</li>
+<li>
+<p>使用网络地址转换（NAT）：虚拟机可以联网，与本机互通，与本机网段内其他主机不通。</p>
+</li>
+<li>
+<p>使用仅主机模式网络：虚拟机不能联网，与本机互通，与本机网段内其他主机不通。</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="8"><img src="https://zfl1001.github.io/post-images/1621146127183.gif" alt="" loading="lazy"></figure>
+<h1 id="八-默认下一步默认下一步默认下一步">八、默认【下一步】，默认【下一步】，默认【下一步】</h1>
+<h1 id="九-出现下面界面输入虚拟机磁盘大小默认20g一般不够使用建议设置略大一些这里设置虚拟机磁盘大小为50g下一步">九、出现下面界面，输入虚拟机磁盘大小，默认20g一般不够使用，建议设置略大一些，这里设置虚拟机磁盘大小为50G，【下一步】</h1>
+<figure data-type="image" tabindex="9"><img src="https://zfl1001.github.io/post-images/1621146138428.gif" alt="" loading="lazy"></figure>
+<h1 id="十-默认下一步点击完成结束虚拟机创建">十、默认【下一步】，点击【完成】结束虚拟机创建：</h1>
+<h1 id="十一-退出安装向导后点击编辑虚拟机设置选项然后指定cddvd镜像文件然后点击确定设置后界面如下图所示">十一、退出安装向导后，点击【编辑虚拟机设置】选项，然后指定【CD/DVD】镜像文件，然后点击【确定】，设置后界面如下图所示</h1>
+<ul>
+<li>
+<p>这里按照自己的需求留下自己需要的，后期也可以补装</p>
+</li>
+<li>
+<p>镜像文件下载地址：https://mirrors.bfsu.edu.cn/centos/7/isos/x86_64/?fileGuid=VTdt6pdGwjPYRTtr，选择下图中的.iso文件下载</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="10"><img src="https://zfl1001.github.io/post-images/1621146148369.gif" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="https://zfl1001.github.io/post-images/1621146156364.gif" alt="" loading="lazy"></figure>
+<h1 id="十二-点击开启虚拟机进入centos7操作系统安装过程">十二、点击开启虚拟机进入CentOS7操作系统安装过程：</h1>
+<h1 id="十三-虚拟机控制台出现界面选择install-centos-7点击回车键继续">十三、虚拟机控制台出现界面，选择【Install CentOS 7】，点击【回车】键继续：</h1>
+<figure data-type="image" tabindex="12"><img src="https://zfl1001.github.io/post-images/1621146166888.gif" alt="" loading="lazy"></figure>
+<h1 id="十四-如下界面建议直接选择默认的是english然后点击continue-我这就选择中文了">十四、如下界面建议直接选择默认的是【English】，然后点击【Continue】。（我这就选择【中文】了）</h1>
+<ul>
+<li>注：中文可能会乱码，我的没有乱码我就选择中文了</li>
+</ul>
+<figure data-type="image" tabindex="13"><img src="https://zfl1001.github.io/post-images/1621146178008.gif" alt="" loading="lazy"></figure>
+<h1 id="十五-然后出现下面个界面对时间进行修改然后点击软件选择我这选了带ui的gnome-桌面其他软件选择的区别请自行百度">十五、然后出现下面个界面，对时间进行修改，然后点击【软件选择】，我这选了带UI的【GNOME 桌面】，其他【软件选择】的区别请自行百度</h1>
+<figure data-type="image" tabindex="14"><img src="https://zfl1001.github.io/post-images/1621146191638.gif" alt="" loading="lazy"></figure>
+<h1 id="十六-然后点击安装位置">十六、然后点击【安装位置】</h1>
+<figure data-type="image" tabindex="15"><img src="https://zfl1001.github.io/post-images/1621146201264.gif" alt="" loading="lazy"></figure>
+<h1 id="十七-点击磁盘选择我要配置分区然后点击完成如图所示">十七、点击磁盘，选择【我要配置分区】，然后点击【完成】,如图所示</h1>
+<figure data-type="image" tabindex="16"><img src="https://zfl1001.github.io/post-images/1621146209533.gif" alt="" loading="lazy"></figure>
+<h1 id="十八-弹出的界面中点击蓝色的地方点这里自动创建他们弹出如下界面">十八、弹出的界面中，点击蓝色的地方【点这里自动创建他们】，弹出如下界面</h1>
+<figure data-type="image" tabindex="17"><img src="https://zfl1001.github.io/post-images/1621146218015.gif" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="18"><img src="https://zfl1001.github.io/post-images/1621146236967.gif" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>/boot：1024M，标准分区格式（Standard partition）创建</p>
+</li>
+<li>
+<p>swap：4096M，标准分区格式创建</p>
+</li>
+<li>
+<p>/：剩余所有空间，采用lvm卷组格式创建</p>
+</li>
+</ul>
+<h1 id="十九-规划后界面如下点击完成在弹出对话框中点击接受更改">十九、规划后界面如下，点击【完成】，在弹出对话框中点击【接受更改】</h1>
+<figure data-type="image" tabindex="19"><img src="https://zfl1001.github.io/post-images/1621146358430.gif" alt="" loading="lazy"></figure>
+<h1 id="二十-然后点击网络和主机名修改操作系统主机名这里修改为db06点击应用点击右上角的开关如图所示然后点击完成">二十、然后点击【网络和主机名】，修改操作系统主机名，这里修改为db06，点击【应用】，点击右上角的开关，如图所示，然后点击【完成】</h1>
+<figure data-type="image" tabindex="20"><img src="https://zfl1001.github.io/post-images/1621146407337.gif" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="21"><img src="https://zfl1001.github.io/post-images/1621146414031.gif" alt="" loading="lazy"></figure>
+<h1 id="二十一-然后点击右下角的开始安装b">二十一、然后点击右下角的【开始安装(B)】</h1>
+<h1 id="二十二-修改root用户密码点击root密码输入密码然后点击确定当右下角出现重启时点击重启">二十二、修改root用户密码，点击【ROOT密码】输入密码，然后点击【确定】，当右下角出现【重启】时点击【重启】</h1>
+<ul>
+<li>如果密码安全度不高，则需要点击2次【确定]才可以。当root密码设置成功再次返回安装界面时我们可以发现之前的界面红色警告消失了，然后可以创建一个普通用户，如果不是UI界面的可以不创建。</li>
+</ul>
+<figure data-type="image" tabindex="22"><img src="https://zfl1001.github.io/post-images/1621146425285.gif" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="23"><img src="https://zfl1001.github.io/post-images/1621146437004.gif" alt="" loading="lazy"></figure>
+<h1 id="二十三-重启后出现如下界面点击licensing然后弹出如下界面点击同意许可点击完成然后点击右下角的完成配置">二十三、重启后出现如下界面，点击【LICENSING.....】，然后弹出如下界面，点击【同意许可】，点击【完成】，然后点击右下角的【完成配置】</h1>
+<figure data-type="image" tabindex="24"><img src="https://zfl1001.github.io/post-images/1621146446273.gif" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="25"><img src="https://zfl1001.github.io/post-images/1621146454507.gif" alt="" loading="lazy"></figure>
+<h1 id="二十四-配置网络检查网络是否连通">二十四、配置网络，检查网络是否连通</h1>
+<h2 id="1打开终端切换到root用户如果已经是root用户忽略">1.打开终端切换到root用户，如果已经是root用户忽略</h2>
+<pre><code>
+[serendipity@db06 ~]$ su
 
-                
-              <p>
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://zfl1001.github.io/post/win10-mysql/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
-    </div>
-  </article>
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://zfl1001.github.io/post/vmware15-centos7/">
-      VMware15下安装CentOS7
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2021-04-06 11:11:33">2021-04-06</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://zfl1001.github.io/tag/CentOS/">
-        <span>CentOS</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>9<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>2337<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-      <div class="post-body">
-        
-        
-          
-            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
-            
-            
-              
-              
-              
-            
-              
-              
-              
-            
-              
-              
-              
-            
-            
-              <p><p><ul class="markdownIt-TOC">
-<li><a href="#%E4%B8%80-%E6%89%93%E5%BC%80vmware-15%E7%82%B9%E5%87%BB%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%80%89%E6%8B%A9%E8%87%AA%E5%AE%9A%E4%B9%89%E9%AB%98%E7%BA%A7%E9%80%89%E9%A1%B9%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E6%AD%A5">一、打开VMware 15，点击创建新的虚拟机，选择“自定义（高级）”选项，点击【下一步】</a></li>
-<li><a href="#%E4%BA%8C-%E7%BB%A7%E7%BB%AD%E7%82%B9%E5%87%BB%E4%B8%8B%E4%B8%80%E6%AD%A5%E5%9C%A8%E5%87%BA%E7%8E%B0%E4%B8%8B%E9%9D%A2%E7%95%8C%E9%9D%A2%E9%80%89%E4%B8%AD%E7%A8%8D%E5%90%8E%E5%AE%89%E8%A3%85%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%80%89%E9%A1%B9%E4%B8%8B%E4%B8%80%E6%AD%A5">二、继续点击【下一步】，在出现下面界面，选中“稍后安装操作系统”选项，【下一步】</a></li>
 
-                
-              <p>
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://zfl1001.github.io/post/vmware15-centos7/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
-    </div>
-  </article>
+密码：                     //root用户密码，输入是不会显示的
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://zfl1001.github.io/post/hello-world/">
-      Hello World!
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2021-04-03 15:23:10">2021-04-03</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://zfl1001.github.io/tag/ksLr5CMFX/">
-        <span>Gridea</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>4<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-      <div class="post-body">
-        
-        
-          
-            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
-            
-            
-              
-              
-              
-            
-              
-              
-              
-            
-              
-              
-              
-            
-            
-              <p><p><img src="https://zfl1001.github.io/post-images/1617434655350.ico" alt="" loading="lazy"><br>
-Hello Gridea!<br>
-Hello GitHub!</p>
 
-                
-              <p>
+
+[root@db06 serendipity]# 
+
+</code></pre>
+<h2 id="2输入ip-add回车查看是否是ens32我这是ens32">2.输入ip add，回车，查看是否是ens32，我这是ens32</h2>
+<figure data-type="image" tabindex="26"><img src="https://zfl1001.github.io/post-images/1621146468605.gif" alt="" loading="lazy"></figure>
+<h2 id="3然后输入-vi-etcsysconfignetwork-scriptsifcfg-ens32如果不是ens32则把ens32改为相应的即可">3.然后输入 vi /etc/sysconfig/network-scripts/ifcfg-ens32,如果不是ens32则把ens32改为相应的即可。</h2>
+<h2 id="4按字符键i进入编辑模式将bootprpto的值改成staticonboot的值改成yes在下面添加下面几句最后结果如图下所示按esc键后输入wq回车完成配置文件编辑">4.按字符键“i”进入编辑模式，将**BOOTPRPTO的值改成static，ONBOOT的值改成yes，**在下面添加下面几句,最后结果如图下所示，按“esc”键后，输入:wq回车，完成配置文件编辑。</h2>
+<pre><code>
+IPADDR=   前三位与主机的IPv4地址一样，最后一位不能一样
+
+NETMASK=  主机的子网掩码     
+
+GATEWAY=  主机的默认网关
+
+DNS1=     主机的DNS服务器，也可以填主机的默认网关
+
+
+
+主机IP获取方式，win+R,cmd
+
+C:\Users\Administrator&gt;ipconfig /all
+
+
+
+如果嫌麻烦可以直接用【二十步】中第二张图片上的
+
+IPADDR=   IP地址
+
+NETMASK=  子网掩码
+
+GATEWAY=  默认路由
+
+DNS1=     DNS
+
+</code></pre>
+<figure data-type="image" tabindex="27"><img src="https://zfl1001.github.io/post-images/1621146483014.gif" alt="" loading="lazy"></figure>
+<h2 id="5输入service-network-restart命令重启网卡输入ifconfig结果如下">5.输入：service network restart命令重启网卡，输入：ifconfig，结果如下</h2>
+<figure data-type="image" tabindex="28"><img src="https://zfl1001.github.io/post-images/1621146490280.gif" alt="" loading="lazy"></figure>
+<h2 id="6打开firefox浏览器输入wwwbaiducom检查网络是否连通-若如下图所示则表示成功了">6.打开Firefox浏览器，输入：www.baidu.com,检查网络是否连通。若如下图所示则表示成功了</h2>
+<ul>
+<li>
+<p>不成功请检查以上几步是否配置打错了，如果没有错误建议用手机热点尝试一下，很大概率是用的人多了，而你所配置的IP地址已经被占用了。</p>
+</li>
+<li>
+<p>注：如果连的手机热点，那么默认网关和DNS可能每次都不一样，需要再重新配置配置一下</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="29"><img src="https://zfl1001.github.io/post-images/1621146497953.gif" alt="" loading="lazy"></figure>
+
+            </div>
             
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://zfl1001.github.io/post/hello-world/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
-    </div>
-  </article>
-  
             
-            
-<div class="page bg-color">
-  <ul class="pagination-ul">
-    
-    
-      
-        <li class="pagination-li pagination-active">
-            <a href="/page/../">
-              1
-            </a>
-        </li>
-      
-    
-    
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      zfl
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://zfl1001.github.io/post/win10-mysql/" title="Win10下安装MySQL">https://zfl1001.github.io/post/win10-mysql/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
   </ul>
+  <div class="tags">
+    
+      <a href="https://zfl1001.github.io/tag/MySQL/"># MySQL</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="VMware15下安装CentOS7" href="https://zfl1001.github.io/post/vmware15-centos7/">VMware15下安装CentOS7</a>
+        <a class="nav-mobile-next" title="VMware15下安装CentOS7" href="https://zfl1001.github.io/post/vmware15-centos7/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
 </div>
-          </section>
+            
+            
+  
+
+          </div>
         </div>
       </div>
     </div>
@@ -717,6 +1002,223 @@ Hello GitHub!</p>
     parent.insertBefore(aelem, next);
   })
 </script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+          
+        </div>
+      </div>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
+    </div>
+    <div class="bottom">
+      
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        window.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        window.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        window.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        window.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      window.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
   </div>
 </body>
 
@@ -1376,6 +1878,5 @@ Hello GitHub!&lt;/p&gt;
   // Using config rendering effect at 'element'.
   const cn = new CanvasNest(document.querySelector('.snow-container'), config);
   </script>
-
 
 </html>
