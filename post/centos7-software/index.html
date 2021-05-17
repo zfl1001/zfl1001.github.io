@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#3bc9db">
-<title>Win10下安装MySQL | zfl</title>
+<title>CentOS 7下常用软件的安装 | zfl</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1621261550574">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="Win10下安装MySQL" />
-  <meta name="keywords" content="MySQL" />
+  <meta name="description" content="CentOS 7下常用软件的安装" />
+  <meta name="keywords" content="vim,QT,Eclipse,CentOS" />
 </head>
 
 <body>
@@ -238,9 +238,11 @@
   <div class="toc-wrapper auto-number auto"
     id="toc_wrapper">
     <ul class="markdownIt-TOC">
-<li><a href="#%E4%B8%80-%E4%B8%8B%E8%BD%BDmysql">一、下载MySQL</a></li>
-<li><a href="#%E4%BA%8C-%E5%AE%89%E8%A3%85mysql">二、安装MySQL</a></li>
-<li><a href="#%E4%B8%89-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">三、配置环境变量</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85vim">安装VIM</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85gcc">安装GCC</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85gdb">安装GDB</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85qt">安装QT</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85eclipse">安装Eclipse</a></li>
 </ul>
 
   </div>
@@ -506,8 +508,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://zfl1001.github.io/post/win10-mysql/">
-      Win10下安装MySQL
+    <a class="post-title-link" href="https://zfl1001.github.io/post/centos7-software/">
+      CentOS 7下常用软件的安装
     </a>
   </h1>
   <div class="post-meta">
@@ -515,7 +517,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2021-05-15 23:47:18">2021-05-15</span>
+      <span class="publish-time" data-t="2021-04-06 21:42:35">2021-04-06</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -524,8 +526,26 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://zfl1001.github.io/tag/MySQL/">
-        <span>MySQL</span>
+      <a href="https://zfl1001.github.io/tag/vim/">
+        <span>vim</span>
+      </a>、
+      
+      
+      
+      <a href="https://zfl1001.github.io/tag/QT/">
+        <span>QT</span>
+      </a>、
+      
+      
+      
+      <a href="https://zfl1001.github.io/tag/Eclipse/">
+        <span>Eclipse</span>
+      </a>、
+      
+      
+      
+      <a href="https://zfl1001.github.io/tag/CentOS/">
+        <span>CentOS</span>
       </a>
       
       
@@ -534,66 +554,138 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2<span class="language" data-lan="minute">分钟</span></span>
+      <span>4<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>385<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>984<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
               <p><ul class="markdownIt-TOC">
-<li><a href="#%E4%B8%80-%E4%B8%8B%E8%BD%BDmysql">一、下载MySQL</a></li>
-<li><a href="#%E4%BA%8C-%E5%AE%89%E8%A3%85mysql">二、安装MySQL</a></li>
-<li><a href="#%E4%B8%89-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">三、配置环境变量</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85vim">安装VIM</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85gcc">安装GCC</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85gdb">安装GDB</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85qt">安装QT</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85eclipse">安装Eclipse</a></li>
 </ul>
 </p>
-<h1 id="一-下载mysql">一、下载MySQL</h1>
-<p>下载地址：<a href="https://downloads.mysql.com/archives/installer/?fileGuid=VgwpyDgk9Kqhvjcq">MySQL :: Download MySQL Installer (Archived Versions)</a>，选择需要的版本下载即可</p>
-<h1 id="二-安装mysql">二、安装MySQL</h1>
-<p>1、双击【.msi】文件，可能会出现下图所示的缓存界面</p>
-<p><img src="https://zfl1001.github.io/post-images/1621228493612.png" alt="" loading="lazy"><br>
-<img src="https://zfl1001.github.io/post-images/1621228500234.png" alt="" loading="lazy"><br>
-2、缓存界面过后，出现下图所示界面，选择【Custom】，然后点击【Next】</p>
-<figure data-type="image" tabindex="1"><img src="https://zfl1001.github.io/post-images/1621228508157.png" alt="" loading="lazy"></figure>
-<p>3、选择MySQL Server、MySQL Workbench进行安装，然后【Next】</p>
-<figure data-type="image" tabindex="2"><img src="https://zfl1001.github.io/post-images/1621228514870.png" alt="" loading="lazy"></figure>
-<p>4、然后点击【Execute】</p>
-<figure data-type="image" tabindex="3"><img src="https://zfl1001.github.io/post-images/1621228522706.png" alt="" loading="lazy"></figure>
-<p>5、出现如下图所示时，点击【Next】</p>
-<figure data-type="image" tabindex="4"><img src="https://zfl1001.github.io/post-images/1621228530105.png" alt="" loading="lazy"></figure>
-<p>6、继续【Next】</p>
-<figure data-type="image" tabindex="5"><img src="https://zfl1001.github.io/post-images/1621228537554.png" alt="" loading="lazy"></figure>
-<p>7、如下图所示，【Next】</p>
-<figure data-type="image" tabindex="6"><img src="https://zfl1001.github.io/post-images/1621228544313.png" alt="" loading="lazy"></figure>
-<p>8、【Next】</p>
-<figure data-type="image" tabindex="7"><img src="https://zfl1001.github.io/post-images/1621228551412.png" alt="" loading="lazy"></figure>
-<p>9、【Next】</p>
-<figure data-type="image" tabindex="8"><img src="https://zfl1001.github.io/post-images/1621228558089.png" alt="" loading="lazy"></figure>
-<p>10、设置密码，最少六位，然后【Next】</p>
-<figure data-type="image" tabindex="9"><img src="https://zfl1001.github.io/post-images/1621228565555.png" alt="" loading="lazy"></figure>
-<p>11、划线部分则表示开机自启，在就默认取消了，然后【Next】</p>
-<figure data-type="image" tabindex="10"><img src="https://zfl1001.github.io/post-images/1621228572053.png" alt="" loading="lazy"></figure>
-<p>12、点击【Execute】，全部下载完成后点击【Finish】</p>
-<p><img src="https://zfl1001.github.io/post-images/1621228580463.png" alt="" loading="lazy"><br>
-<img src="https://zfl1001.github.io/post-images/1621228586325.png" alt="" loading="lazy"><br>
-13、点击【Next】</p>
-<figure data-type="image" tabindex="11"><img src="https://zfl1001.github.io/post-images/1621228592966.png" alt="" loading="lazy"></figure>
-<p>14、最后点击【Finish】，安装结束，打开MySQL Workbench程序，如下图所示，点击标记处，输入密码即可登录</p>
-<p><img src="https://zfl1001.github.io/post-images/1621228603778.png" alt="" loading="lazy"><br>
-<img src="https://zfl1001.github.io/post-images/1621255815083.png" alt="" loading="lazy"><br>
-备注：第一次MySQL默认是启动的，后续启动需在cmd下或者任务管理器—&gt;服务，找到MySQL80—&gt;右键【启动或者停止】</p>
-<pre><code class="language-plain">net start mysql80   #启动MySQL服务
-net stop mysql80    #停止MySQL服务
-#mysql80是安装的MySQL名称见安装步骤的第11步中，Window Service Name后的名称
-#或者cmd下输入services.msc查看mysql名称
-#要在管理员权限下的cmd
+<h1 id="安装vim">安装VIM</h1>
+<p><strong>1、查看有无VIM</strong></p>
+<pre><code>yum list installed | grep vim   
+//查看系统有无VIM如果出现下图所示，则表示已经自带了，无需再安装
 </code></pre>
-<h1 id="三-配置环境变量">三、配置环境变量</h1>
-<p>右击此电脑—&gt;属性—&gt;高级系统设置—&gt;高级—&gt;环境变量，在打开的窗口中双击 【系统变量】 下的【Path】，在最后添加【C:\Program Files\MySQL\MySQL Server 8.0\bin】—&gt;【确定】</p>
+<figure data-type="image" tabindex="1"><img src="https://zfl1001.github.io/post-images/1621260231748.png" alt="" loading="lazy"></figure>
+<p><strong>2、安装VIM</strong></p>
+<pre><code>yum install vim
+直到显示Complete!表示安装完成，root用户下运行
+</code></pre>
+<h1 id="安装gcc">安装GCC</h1>
+<pre><code>yum -y install gcc gcc-c++ kernel-devel 
+//安装gcc、c++编译器以及内核文件，需要在root用户下安装，安装完成会显示下图所示的
+完毕！
+gcc -v
+//检测GCC-C语言编辑器版本，如下图所示
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://zfl1001.github.io/post-images/1621260247046.png" alt="" loading="lazy"></figure>
+<pre><code>g++ -v
+//检测GCC-C++语言编辑器版本，如下图所示
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://zfl1001.github.io/post-images/1621260257859.png" alt="" loading="lazy"></figure>
+<h1 id="安装gdb">安装GDB</h1>
+<pre><code>yum -y install gdb
+//安装GDB调试器，需要在root用户下安装，若已经安装则会如下图所示，否则会与安装GCC一样在最后显示
+完毕！
+</code></pre>
+<figure data-type="image" tabindex="4"><img src="https://zfl1001.github.io/post-images/1621260276291.png" alt="" loading="lazy"></figure>
+<pre><code>gdb -v
+//检查GDB调试器版本，如下图所示
+</code></pre>
+<figure data-type="image" tabindex="5"><img src="https://zfl1001.github.io/post-images/1621260285236.png" alt="" loading="lazy"></figure>
+<h1 id="安装qt">安装QT</h1>
+<p><strong>下载地址：</strong><a href="https://download.qt.io/?fileGuid=9Gy3kGKVvpHhCkkQ">https://download.qt.io/</a></p>
+<p><strong>一、点击official_releases—&gt;qt—&gt;选择需要的版本，下载</strong></p>
+<figure data-type="image" tabindex="6"><img src="https://zfl1001.github.io/post-images/1621260296789.png" alt="" loading="lazy"></figure>
+<p><strong>二、安装，这个有两种安装方法</strong></p>
+<p><strong>方法一</strong></p>
+<p>1、单击下载文件—&gt;属性—&gt;点击权限—&gt;勾选【允许作为程序执行文件】—&gt;点击右上角的【×】</p>
+<p><img src="https://zfl1001.github.io/post-images/1621260341802.png" alt="" loading="lazy"><br>
+2、双击下载文件开始安装—&gt;输入账号，没有的话就注册一个账号</p>
+<p>3、出现下图所示时，在【Qt5.9.9】打上勾，如图所示，然后【下一步】后·，正常安装即可</p>
+<figure data-type="image" tabindex="7"><img src="https://zfl1001.github.io/post-images/1621260356184.png" alt="" loading="lazy"></figure>
+<p><strong>方法二</strong></p>
+<p>1、预安装</p>
+<pre><code>yum -y install mesa-libGL-devel mesa-libGLU-devel freeglut-devel
+</code></pre>
+<p>2、然后使用转到root用户下，给下载的文件赋予可执行的权限</p>
+<pre><code>chmod +x qt-opensource-linux-x64-5.9.5.run
+</code></pre>
+<p>3、执行文件，进行安装</p>
+<pre><code>./qt-opensource-linux-x64-5.9.5.run
+</code></pre>
+<p>原文链接：<a href="https://blog.csdn.net/beijiafei/article/details/82952212?fileGuid=9Gy3kGKVvpHhCkkQ">https://blog.csdn.net/beijiafei/article/details/82952212</a></p>
+<p><strong>三、验证是否安装成功</strong><br>
+点击【Projects】—&gt;【New】—&gt;选择如下图所示—&gt;再点击【Choose...】</p>
+<figure data-type="image" tabindex="8"><img src="https://zfl1001.github.io/post-images/1621260382914.png" alt="" loading="lazy"></figure>
+<p><strong>四、汉化</strong><br>
+点击【Tools】—&gt;【Options..】—&gt;【Environment】—&gt;【Language】—&gt;选择【Chinese】—&gt;【Apply】—&gt;【OK】—&gt;【OK】—&gt;然后关掉重新打开就可以了</p>
+<figure data-type="image" tabindex="9"><img src="https://zfl1001.github.io/post-images/1621260390848.png" alt="" loading="lazy"></figure>
+<h1 id="安装eclipse">安装Eclipse</h1>
+<p><strong>下载地址：</strong><a href="https://www.eclipse.org/?fileGuid=9Gy3kGKVvpHhCkkQ">https://www.eclipse.org/</a><strong>，下载完成后解压即可</strong></p>
+<p><strong>一、安装Java环境</strong></p>
+<pre><code>yum install java-devel
+//在root用户下运行最后显示【完毕！】则安装成功
+</code></pre>
+<p><strong>二、汉化</strong></p>
+<p>1、点击Help—&gt;about eclipse查看软件版本，如图：</p>
+<figure data-type="image" tabindex="10"><img src="https://zfl1001.github.io/post-images/1621260409861.png" alt="" loading="lazy"></figure>
+<p>2、进入到官网语言包下载地址：<strong><a href="http://www.eclipse.org/babel/downloads.php?fileGuid=9Gy3kGKVvpHhCkkQ">http://www.eclipse.org/babel/downloads.php</a></strong>，选择对应的版本，复制版本下的链接，如下图</p>
+<figure data-type="image" tabindex="11"><img src="https://zfl1001.github.io/post-images/1621260421084.png" alt="" loading="lazy"></figure>
+<p>3、点击Help —&gt; Install New Software...—&gt;点击add—&gt;Location后面添加网址：就是上面标记的网址，点击add—&gt;—选择【  Babel Language Pack for eclipse in Chinese (Simplified) 】—&gt;下一步—&gt;选择【install.....】—&gt;等待右下方进度条跑完—&gt;选择【重启】</p>
+<figure data-type="image" tabindex="12"><img src="https://zfl1001.github.io/post-images/1621260430682.png" alt="" loading="lazy"></figure>
+<p>参考于：<a href="https://blog.csdn.net/Aoutlaw/article/details/97618940?fileGuid=9Gy3kGKVvpHhCkkQ">https://blog.csdn.net/Aoutlaw/article/details/97618940</a></p>
+<p><strong>三、在CentOS 7下运行C语言程序的步骤</strong></p>
+<p>1、如下图所示</p>
+<figure data-type="image" tabindex="13"><img src="https://zfl1001.github.io/post-images/1621260437653.png" alt="" loading="lazy"></figure>
+<p>2、选择如下图所示，然后点击【下一步】</p>
+<figure data-type="image" tabindex="14"><img src="https://zfl1001.github.io/post-images/1621260444171.png" alt="" loading="lazy"></figure>
+<p>3、以下步骤有两方式。分为3.1和3.2</p>
+<p>3.1</p>
+<p>1、选择如下图所示，然后点击【完成】</p>
+<figure data-type="image" tabindex="15"><img src="https://zfl1001.github.io/post-images/1621260452977.png" alt="" loading="lazy"></figure>
+<p>2、如下图所示</p>
+<figure data-type="image" tabindex="16"><img src="https://zfl1001.github.io/post-images/1621260460341.png" alt="" loading="lazy"></figure>
+<p>3、在【Source file：】下，填入【mian.c】，然后点击【完成】</p>
+<figure data-type="image" tabindex="17"><img src="https://zfl1001.github.io/post-images/1621260467408.png" alt="" loading="lazy"></figure>
+<p>4、输入代码,按下图所示依次点击，则运行成功，若不成功，则再从图中的第二步再来一遍</p>
+<pre><code>#include &lt;stdio.h&gt;
+int main()
+{
+  printf(&quot;Hello World!\n&quot;);
+   return 0;
+}
+</code></pre>
+<figure data-type="image" tabindex="18"><img src="https://zfl1001.github.io/post-images/1621260479487.png" alt="" loading="lazy"></figure>
+<p>点击上图第三步时，要先在空白处点击一下，变为下图时，再点击运行（即第三步）</p>
+<figure data-type="image" tabindex="19"><img src="https://zfl1001.github.io/post-images/1621260485665.png" alt="" loading="lazy"></figure>
+<p>然后选择下图所示（即描述为可用）</p>
+<figure data-type="image" tabindex="20"><img src="https://zfl1001.github.io/post-images/1621260509211.png" alt="" loading="lazy"></figure>
+<p>5、显示成功</p>
+<figure data-type="image" tabindex="21"><img src="https://zfl1001.github.io/post-images/1621260527483.png" alt="" loading="lazy"></figure>
+<p>3.2</p>
+<p>1、选择如下图所示，然后点击【完成】</p>
+<figure data-type="image" tabindex="22"><img src="https://zfl1001.github.io/post-images/1621260536384.png" alt="" loading="lazy"></figure>
+<p>2、输入代码,按下图所示依次点击，则运行成功，若不成功，则再从图中的第二步再来一遍</p>
+<figure data-type="image" tabindex="23"><img src="https://zfl1001.github.io/post-images/1621260542384.png" alt="" loading="lazy"></figure>
+<p>注释：点击上图第三步时，要先在空白处点击一下，变为下图时，再点击运行（即第三步）</p>
+<figure data-type="image" tabindex="24"><img src="https://zfl1001.github.io/post-images/1621260547649.png" alt="" loading="lazy"></figure>
+<p>然后选择下图所示（即描述为可用）</p>
+<figure data-type="image" tabindex="25"><img src="https://zfl1001.github.io/post-images/1621260557181.png" alt="" loading="lazy"></figure>
+<p>3、显示成功</p>
+<figure data-type="image" tabindex="26"><img src="https://zfl1001.github.io/post-images/1621260564859.png" alt="" loading="lazy"></figure>
 
             </div>
             
@@ -606,7 +698,7 @@ net stop mysql80    #停止MySQL服务
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://zfl1001.github.io/post/win10-mysql/" title="Win10下安装MySQL">https://zfl1001.github.io/post/win10-mysql/</a>
+      <a href="https://zfl1001.github.io/post/centos7-software/" title="CentOS 7下常用软件的安装">https://zfl1001.github.io/post/centos7-software/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -615,17 +707,27 @@ net stop mysql80    #停止MySQL服务
   </ul>
   <div class="tags">
     
-      <a href="https://zfl1001.github.io/tag/MySQL/"># MySQL</a>
+      <a href="https://zfl1001.github.io/tag/vim/"># vim</a>
+    
+      <a href="https://zfl1001.github.io/tag/QT/"># QT</a>
+    
+      <a href="https://zfl1001.github.io/tag/Eclipse/"># Eclipse</a>
+    
+      <a href="https://zfl1001.github.io/tag/CentOS/"># CentOS</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="Win10下安装MySQL" href="https://zfl1001.github.io/post/win10-mysql/">Win10下安装MySQL</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="Win10下安装MySQL" href="https://zfl1001.github.io/post/win10-mysql/">上一篇</a>
+      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="CentOS 7下常用软件的安装" href="https://zfl1001.github.io/post/centos7-software/">CentOS 7下常用软件的安装</a>
-        <a class="nav-mobile-next" title="CentOS 7下常用软件的安装" href="https://zfl1001.github.io/post/centos7-software/">下一篇</a>
+        <a class="nav-pc-next" title="VMware15下安装CentOS7" href="https://zfl1001.github.io/post/vmware15-centos7/">VMware15下安装CentOS7</a>
+        <a class="nav-mobile-next" title="VMware15下安装CentOS7" href="https://zfl1001.github.io/post/vmware15-centos7/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
