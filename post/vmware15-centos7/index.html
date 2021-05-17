@@ -9,7 +9,7 @@
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#3bc9db">
 <title>VMware15下安装CentOS7 | zfl</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1621265465245">
+<link rel="shortcut icon" href="/favicon.ico?v=1621265690462">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1184,7 +1184,12 @@ DNS1=     DNS
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://zfl1001.github.io/post/git-bug/"" data-c="
-          &lt;h2 id=&#34;一-fatal-refusing-to-merge-unrelated-histories&#34;&gt;一、&lt;code&gt;fatal: refusing to merge unrelated histories&lt;/code&gt;&lt;/h2&gt;
+          &lt;p&gt;&lt;ul class=&#34;markdownIt-TOC&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;#%E4%B8%80-fatal-refusing-to-merge-unrelated-histories&#34;&gt;一、&lt;code&gt;fatal: refusing to merge unrelated histories&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E4%BA%8C-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88&#34;&gt;二、解决方案&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;一-fatal-refusing-to-merge-unrelated-histories&#34;&gt;一、&lt;code&gt;fatal: refusing to merge unrelated histories&lt;/code&gt;&lt;/h1&gt;
 &lt;p&gt;今天在使用Git创建项目的时候，在两个分支合并的时候，出现了下面的这个错误。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;~/SpringSpace/newframe on  master ⌚ 11:35:56
 $ git merge origin/druid
@@ -1192,7 +1197,7 @@ fatal: refusing to merge unrelated histories
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这里的问题的关键在于：&lt;code&gt;fatal: refusing to merge unrelated histories&lt;/code&gt;&lt;br&gt;
 你可能会在&lt;code&gt;git pull&lt;/code&gt;或者&lt;code&gt;git push&lt;/code&gt;中都有可能会遇到，这是因为两个分支没有取得关系。那么怎么解决呢？&lt;/p&gt;
-&lt;h2 id=&#34;二-解决方案&#34;&gt;二、解决方案&lt;/h2&gt;
+&lt;h1 id=&#34;二-解决方案&#34;&gt;二、解决方案&lt;/h1&gt;
 &lt;p&gt;1、在你操作命令后面加&lt;code&gt;--allow-unrelated-histories&lt;/code&gt;&lt;br&gt;
 例如：&lt;br&gt;
 &lt;code&gt;git merge master --allow-unrelated-histories&lt;/code&gt;&lt;/p&gt;
