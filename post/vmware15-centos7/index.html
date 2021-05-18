@@ -9,7 +9,7 @@
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#3bc9db">
 <title>VMware15下安装CentOS7 | zfl</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1621311170471">
+<link rel="shortcut icon" href="/favicon.ico?v=1621379523179">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1186,8 +1186,8 @@ DNS1=     DNS
         <a class="result-title" style="opacity: 0;" href="https://zfl1001.github.io/post/centos7-mysql/"" data-c="
           &lt;p&gt;&lt;ul class=&#34;markdownIt-TOC&#34;&gt;
 &lt;li&gt;&lt;a href=&#34;#%E4%B8%80-%E4%B8%8B%E8%BD%BDmysql&#34;&gt;一、下载MySQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#%E4%BA%8C-%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81&#34;&gt;二、设置用户名密码&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#%E4%B8%89-%E8%BF%90%E8%A1%8Cmysql&#34;&gt;三、运行MySQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E4%BA%8C-%E8%BF%90%E8%A1%8Cmysql&#34;&gt;二、运行MySQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E4%B8%89-%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81&#34;&gt;三、设置用户名密码&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/p&gt;
 &lt;h1 id=&#34;一-下载mysql&#34;&gt;一、下载MySQL&lt;/h1&gt;
@@ -1201,18 +1201,7 @@ DNS1=     DNS
 &lt;pre&gt;&lt;code&gt;$ sudo yum install mysql-server -y
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;原文链接：&lt;a href=&#34;https://www.zhihu.com/tardis/sogou/art/49334204&#34;&gt;阿里云服务器(CentOS7)使用yum安装MySql (zhihu.com)&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;二-设置用户名密码&#34;&gt;二、设置用户名密码&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;[root@db06 serendipity]# mysqladmin --user=root password 1234
-Warning: Using a password on the command line interface can be insecure.
-//设置成功
-
-输入验证
-mysql -u root -p
-Enter password:   //默认不显示
-....
-mysql&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;三-运行mysql&#34;&gt;三、运行MySQL&lt;/h1&gt;
+&lt;h1 id=&#34;二-运行mysql&#34;&gt;二、运行MySQL&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;1、启动 MySQL&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;systemctl start mysqld   #效果如下
 &lt;/code&gt;&lt;/pre&gt;
@@ -1230,6 +1219,17 @@ mysql&amp;gt;
 Hint: Some lines were ellipsized, use -l to show in full.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;原文链接：&lt;a href=&#34;https://blog.csdn.net/weixin_45793065/article/details/106574616&#34;&gt;启动mysql 服务器 Redirecting to /bin/systemctl start mysql.service_猪三岁的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;三-设置用户名密码&#34;&gt;三、设置用户名密码&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;[root@db06 serendipity]# mysqladmin --user=root password 1234
+Warning: Using a password on the command line interface can be insecure.
+//设置成功
+
+输入验证
+mysql -u root -p
+Enter password:   //默认不显示
+....
+mysql&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 ">CentOS 7下安装MySQL</a>
       </div>
       
