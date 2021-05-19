@@ -9,7 +9,7 @@
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#3bc9db">
 <title>zfl</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1621380154933">
+<link rel="shortcut icon" href="/favicon.ico?v=1621393952716">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -452,7 +452,7 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>246<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>257<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
@@ -1367,10 +1367,13 @@ zhou@DESKTOP-FBESVN7 MINGW64 ~/OneDrive/Gridea_blog/output (master)
 &lt;p&gt;&lt;strong&gt;2、安装rpm包,安装后就可以得到mysql的yum源powershell&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;3、安装mysql服务&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、安装mysql服务&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ sudo yum install mysql-server -y
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;原文链接：&lt;a href=&#34;https://www.zhihu.com/tardis/sogou/art/49334204&#34;&gt;阿里云服务器(CentOS7)使用yum安装MySql (zhihu.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4、安装mysql-devel&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ sudo yum install mysql-devel -y
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;二-运行mysql&#34;&gt;二、运行MySQL&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;1、启动 MySQL&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;systemctl start mysqld   #效果如下
