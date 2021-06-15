@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zfl1001.github.io</id>
     <title>zfl</title>
-    <updated>2021-05-30T11:28:03.323Z</updated>
+    <updated>2021-06-15T15:36:05.493Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zfl1001.github.io"/>
     <link rel="self" href="https://zfl1001.github.io/atom.xml"/>
@@ -10,6 +10,41 @@
     <logo>https://zfl1001.github.io/images/avatar.png</logo>
     <icon>https://zfl1001.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, zfl</rights>
+    <entry>
+        <title type="html"><![CDATA[树莓派]]></title>
+        <id>https://zfl1001.github.io/post/Raspberry Pi/</id>
+        <link href="https://zfl1001.github.io/post/Raspberry Pi/">
+        </link>
+        <updated>2021-06-15T15:13:34.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CentOS7安装VScode]]></title>
+        <id>https://zfl1001.github.io/post/centos7-vscode/</id>
+        <link href="https://zfl1001.github.io/post/centos7-vscode/">
+        </link>
+        <updated>2021-06-13T15:24:01.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CentOS7下Django的安装与运行]]></title>
+        <id>https://zfl1001.github.io/post/centos7-django/</id>
+        <link href="https://zfl1001.github.io/post/centos7-django/">
+        </link>
+        <updated>2021-06-12T04:27:30.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[树莓派及Linux错误详解]]></title>
+        <id>https://zfl1001.github.io/post/Raspberry Pi-linux-bug/</id>
+        <link href="https://zfl1001.github.io/post/Raspberry Pi-linux-bug/">
+        </link>
+        <updated>2021-06-12T04:20:22.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Django]]></title>
+        <id>https://zfl1001.github.io/post/win10-django/</id>
+        <link href="https://zfl1001.github.io/post/win10-django/">
+        </link>
+        <updated>2021-05-25T05:32:15.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Git的报错]]></title>
         <id>https://zfl1001.github.io/post/git-bug/</id>
@@ -37,40 +72,5 @@
         <link href="https://zfl1001.github.io/post/mysql-bug/">
         </link>
         <updated>2021-05-09T04:51:23.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Win10下安装MySQL]]></title>
-        <id>https://zfl1001.github.io/post/win10-mysql/</id>
-        <link href="https://zfl1001.github.io/post/win10-mysql/">
-        </link>
-        <updated>2021-05-08T01:27:18.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CentOS 7下常用软件的安装]]></title>
-        <id>https://zfl1001.github.io/post/centos7-software/</id>
-        <link href="https://zfl1001.github.io/post/centos7-software/">
-        </link>
-        <updated>2021-04-06T13:42:35.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[VMware15下安装CentOS7]]></title>
-        <id>https://zfl1001.github.io/post/vmware15-centos7/</id>
-        <link href="https://zfl1001.github.io/post/vmware15-centos7/">
-        </link>
-        <updated>2021-04-06T03:11:33.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Gridea+Github创建静态博客教程]]></title>
-        <id>https://zfl1001.github.io/post/gridea-github/</id>
-        <link href="https://zfl1001.github.io/post/gridea-github/">
-        </link>
-        <updated>2021-04-03T07:25:42.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello World!]]></title>
-        <id>https://zfl1001.github.io/post/hello-world/</id>
-        <link href="https://zfl1001.github.io/post/hello-world/">
-        </link>
-        <updated>2021-04-03T07:23:10.000Z</updated>
     </entry>
 </feed>
